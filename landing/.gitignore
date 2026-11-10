@@ -1,0 +1,21 @@
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Secrets - never commit
+.env
+.env.*
+*.pem
+*.key
+
+# Logs and temp
+*.log
+*.tmp
+
+# Source material: captures of user comments, not published
+testimonios/

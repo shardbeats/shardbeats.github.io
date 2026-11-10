@@ -1,0 +1,27 @@
+# Shard Btmkr — Free Hip-Hop Beat Pack
+
+> A free lead-magnet landing page from Mexican beatmaker Dario Garcia (Shard Btmkr). Visitors enter their email to receive a free hip-hop beat pack: 5 beats in WAV 44.1 kHz / 24-bit plus 25 separate stems (kick, snare, hats, bass, melody, FX), with BPM and key. The license allows personal and commercial use, including monetization on YouTube, Spotify and TikTok; reselling the beats unmodified is not allowed. New packs are released weekly.
+
+Canonical site: https://shardbeats.github.io/landing/
+Spanish version: https://shardbeats.github.io/landing/
+English version: https://shardbeats.github.io/landing/en/
+Last updated: 2026-11-10
+Author: Dario Garcia (Shard Btmkr), La Piedad, Michoacán, Mexico
+Contact: https://github.com/shardbeats
+
+## Offer
+
+- [Free beat pack (Spanish)](https://shardbeats.github.io/landing/#descargar) — 5 beats in WAV + 25 stems, royalty-free, no card required.
+- [Free beat pack (English)](https://shardbeats.github.io/landing/en/#download) — same pack, English landing.
+- [FAQ Spanish](https://shardbeats.github.io/landing/#faq) — pricing, licensing, stems and release cadence.
+- [FAQ English](https://shardbeats.github.io/landing/en/#faq)
+
+## Optional
+
+- [Privacy policy](https://shardbeats.github.io/landing/privacy.html) — email list, Mailchimp, Google Analytics and consent.
+- [TRAKK SUITE tools](https://shardbeats.github.io/tools/) — the author's offline tools for beatmakers.
+- [BeatStars sound kits](https://www.beatstars.com/shardbeats/sound-kits)
+- [YouTube](https://youtube.com/@shardbeats)
+- [Tutorials on YouTube](https://www.youtube.com/@ShardBtmking)
+- [Instagram](https://instagram.com/shardbeats)
+- [Spotify](https://open.spotify.com/artist/2LVt1TvGkhk4PYkMR1zANI)

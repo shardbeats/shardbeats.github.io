@@ -1,0 +1,36 @@
+# ShardBeats TRAKK SUITE
+
+> Six free, offline, open-source tools for beatmakers: convert sample libraries to WAV for the Roland SP-404MK2, peak-normalize clips, generate beat titles, render beats to 1080p video, and produce beat license contracts as PDF. Portable Windows executables. No accounts, no cloud, no subscriptions. MIT licensed.
+
+Canonical site: https://shardbeats.github.io/tools/
+Spanish version: https://shardbeats.github.io/tools/
+English version: https://shardbeats.github.io/tools/en/
+Last updated: 2026-11-10
+Author: Dario Garcia (Shard Btmkr), La Piedad, Mich., Mexico
+Source: https://github.com/shardbeats
+
+## Tools
+
+- [TRAKKSTUDIO](https://shardbeats.github.io/tools/trakkstudio/) — Organize, convert to SP-404MK2 WAV and peak-normalize in one window. [English](https://shardbeats.github.io/tools/en/trakkstudio/) · Source: https://github.com/shardbeats/TRAKKSTUDIO
+- [TRAKKCONVERTER](https://shardbeats.github.io/tools/trakkconverter/) — Batch-convert sample libraries to WAV compatible with the Roland SP-404MK2 (48 kHz, 16-bit, stereo). [English](https://shardbeats.github.io/tools/en/trakkconverter/) · Source: https://github.com/shardbeats/TRAKKCONVERTER
+- [TRAKKNORMALIZER](https://shardbeats.github.io/tools/trakknormalizer/) — Per-clip peak normalization with linear gain, no compression. [English](https://shardbeats.github.io/tools/en/trakknormalizer/) · Source: https://github.com/shardbeats/TRAKKNORMALIZER
+- [TRAKKNAME](https://shardbeats.github.io/tools/trakkname/) — Beat title generator by artist, genre and mood (EN/ES). Android build also available. [English](https://shardbeats.github.io/tools/en/trakkname/) · Source: https://github.com/shardbeats/TRAKKNAME
+- [TRAKKOUT](https://shardbeats.github.io/tools/trakkout/) — Turn a beat and artwork into a 1080p MP4 for YouTube via FFmpeg, with templates and scheduled publishing. [English](https://shardbeats.github.io/tools/en/trakkout/) · Source: https://github.com/shardbeats/TRAKKOUT
+- [TRAKKLICENSE](https://shardbeats.github.io/tools/trakklicense/) — Generate beat license contracts as PDF (EN/ES) with sequential folios and SHA256 evidence, offline. [English](https://shardbeats.github.io/tools/en/trakklicense/) · Source: https://github.com/shardbeats/TRAKKLICENSE
+
+## Guides
+
+- [How to prep your library, step by step](https://shardbeats.github.io/tools/en/#guide)
+- [Cómo preparar tu librería paso a paso](https://shardbeats.github.io/tools/#guia)
+- [FAQ (English)](https://shardbeats.github.io/tools/en/#faq)
+- [Preguntas frecuentes (Español)](https://shardbeats.github.io/tools/#faq)
+
+## Optional
+
+- [Free beat pack (WAV + stems)](https://shardbeats.github.io/landing/)
+- [Sound kits on BeatStars](https://www.beatstars.com/shardbeats/sound-kits)
+- [Privacy policy](https://shardbeats.github.io/tools/privacy.html)
+- [YouTube](https://youtube.com/@shardbeats)
+- [Tutorials on YouTube](https://www.youtube.com/@ShardBtmking)
+- [Instagram](https://instagram.com/shardbeats)
+- [Spotify](https://open.spotify.com/artist/2LVt1TvGkhk4PYkMR1zANI)

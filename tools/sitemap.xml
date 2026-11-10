@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://shardbeats.github.io/tools/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tools/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tools/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tools/" />
+  </url>
+  <url>
+    <loc>https://shardbeats.github.io/tools/en/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tools/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tools/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tools/" />
+  </url>
+
+  <url>
+    <loc>https://shardbeats.github.io/tools/trakkstudio/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tools/trakkstudio/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tools/en/trakkstudio/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tools/trakkstudio/" />
+  </url>
+  <url>
+    <loc>https://shardbeats.github.io/tools/en/trakkstudio/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tools/trakkstudio/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tools/en/trakkstudio/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tools/trakkstudio/" />
+  </url>
+
+  <url>
+    <loc>https://shardbeats.github.io/tools/trakkconverter/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tools/trakkconverter/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tools/en/trakkconverter/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tools/trakkconverter/" />
+  </url>
+  <url>
+    <loc>https://shardbeats.github.io/tools/en/trakkconverter/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tools/trakkconverter/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tools/en/trakkconverter/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tools/trakkconverter/" />
+  </url>
+
+  <url>
+    <loc>https://shardbeats.github.io/tools/trakknormalizer/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tools/trakknormalizer/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tools/en/trakknormalizer/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tools/trakknormalizer/" />
+  </url>
+  <url>
+    <loc>https://shardbeats.github.io/tools/en/trakknormalizer/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tools/trakknormalizer/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tools/en/trakknormalizer/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tools/trakknormalizer/" />
+  </url>
+
+  <url>
+    <loc>https://shardbeats.github.io/tools/trakkname/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tools/trakkname/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tools/en/trakkname/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tools/trakkname/" />
+  </url>
+  <url>
+    <loc>https://shardbeats.github.io/tools/en/trakkname/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tools/trakkname/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tools/en/trakkname/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tools/trakkname/" />
+  </url>
+
+  <url>
+    <loc>https://shardbeats.github.io/tools/trakkout/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tools/trakkout/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tools/en/trakkout/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tools/trakkout/" />
+  </url>
+  <url>
+    <loc>https://shardbeats.github.io/tools/en/trakkout/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tools/trakkout/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tools/en/trakkout/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tools/trakkout/" />
+  </url>
+
+  <url>
+    <loc>https://shardbeats.github.io/tools/trakklicense/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tools/trakklicense/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tools/en/trakklicense/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tools/trakklicense/" />
+  </url>
+  <url>
+    <loc>https://shardbeats.github.io/tools/en/trakklicense/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tools/trakklicense/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tools/en/trakklicense/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tools/trakklicense/" />
+  </url>
+
+  <url>
+    <loc>https://shardbeats.github.io/tools/privacy.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

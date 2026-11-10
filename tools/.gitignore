@@ -1,0 +1,25 @@
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Secrets - never commit
+.env
+.env.*
+*.pem
+*.key
+
+# Logs and temp
+*.log
+*.tmp
+
+# Stray desktop captures used as source material
+Captura de pantalla*.png
+
+# Python
+__pycache__/
+*.pyc
