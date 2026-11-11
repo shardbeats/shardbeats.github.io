@@ -78,6 +78,28 @@
 .btn-big.stop { background: transparent; border: 1px solid var(--border); color: var(--text); box-shadow: none; }
 .check { display: flex; gap: 8px; align-items: center; justify-content: center; font-size: 14px; color: var(--muted); }
 .check input { accent-color: var(--amber); width: 18px; height: 18px; }
+.marking { color: var(--muted); font-size: 15px; font-weight: 600; margin-top: 4px; min-height: 22px; }
+.bpm-step { display: flex; gap: 10px; align-items: center; justify-content: center; }
+.step-btn {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--bg2); border: 1px solid var(--border);
+  color: var(--text); font-size: 20px; font-weight: 800; cursor: pointer;
+  font-family: inherit;
+}
+.step-btn:hover { border-color: var(--amber); color: var(--amber); }
+.tap-btn {
+  background: transparent; border: 1px dashed var(--border); color: var(--muted);
+  font-weight: 700; font-size: 14px; padding: 11px 26px; border-radius: 999px;
+  cursor: pointer; font-family: inherit;
+}
+.tap-btn:hover { border-color: var(--amber); color: var(--amber); }
+.tap-btn.tapped { border-style: solid; border-color: var(--amber); color: var(--amber); }
+.dots-hint { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.beats span { cursor: pointer; }
+.beats span.muted { opacity: .25; }
+select.sound { min-width: 130px; }
+.vol-row { display: flex; gap: 10px; align-items: center; justify-content: center; }
+.vol-row input[type="range"] { width: 160px; accent-color: var(--amber); }
 </style>
 
 <script type="application/ld+json">
@@ -147,8 +169,16 @@
     <div class="pulse" id="pulse">1</div>
     <div class="beats" id="beats"></div>
     <div class="bpm-big"><span id="bpmVal">90</span> <small>BPM</small></div>
+    <div class="marking" id="marking">Andante</div>
     <div class="controls">
-      <input type="range" id="bpm" min="30" max="240" value="90" aria-label="BPM" />
+      <div class="bpm-step">
+        <button class="step-btn" id="minus" type="button" aria-label="Menos 1 BPM">−</button>
+        <input type="range" id="bpm" min="30" max="240" value="90" aria-label="BPM" style="flex:1" />
+        <button class="step-btn" id="plus" type="button" aria-label="Más 1 BPM">+</button>
+      </div>
+      <div class="row2">
+        <button class="tap-btn" id="tap" type="button">Tap tempo (T)</button>
+      </div>
       <div class="row2">
         <label>Beats por compás
           <select id="beatsPerBar">
@@ -160,8 +190,32 @@
             <option value="7">7</option>
           </select>
         </label>
+        <label>Subdivisión
+          <select id="subdiv">
+            <option value="1" selected>Negras</option>
+            <option value="2">Corcheas</option>
+            <option value="3">Tresillos</option>
+            <option value="4">Semicorcheas</option>
+          </select>
+        </label>
+      </div>
+      <div class="row2">
+        <label>Sonido
+          <select id="sound" class="sound">
+            <option value="click" selected>Click</option>
+            <option value="wood">Woodblock</option>
+            <option value="beep">Beep</option>
+          </select>
+        </label>
+        <div class="vol-row">
+          <label for="vol">Volumen</label>
+          <input type="range" id="vol" min="0" max="100" value="70" />
+        </div>
+      </div>
+      <div class="row2">
         <label class="check"><input type="checkbox" id="accent" checked /> Acento en el 1</label>
       </div>
+      <p class="dots-hint">Toca un punto para ciclar: normal → acento → silencio. Espacio = empezar/detener · ←/→ = ±1 (Shift ±10) · T = tap</p>
       <div class="row2">
         <button class="btn-big" id="toggle" type="button">Empezar</button>
       </div>
@@ -195,80 +249,205 @@
 (function () {
   var bpmSlider = document.getElementById('bpm');
   var bpmVal = document.getElementById('bpmVal');
+  var markingEl = document.getElementById('marking');
   var beatsSel = document.getElementById('beatsPerBar');
+  var subdivSel = document.getElementById('subdiv');
+  var soundSel = document.getElementById('sound');
+  var volSlider = document.getElementById('vol');
   var accentChk = document.getElementById('accent');
   var toggle = document.getElementById('toggle');
+  var tapBtn = document.getElementById('tap');
   var pulse = document.getElementById('pulse');
   var beatsBox = document.getElementById('beats');
 
-  var ctx = null, timer = null, nextTime = 0, beat = 0;
+  var LOOKAHEAD_MS = 25, SCHEDULE_AHEAD = 0.12;
+  var ctx = null, timer = null, nextTime = 0, step = 0;
+  var beatState = {}; // beatIndex -> 'accent' | 'mute' (default normal)
+  var taps = [];
+  var wakeLock = null;
+
+  var MARKINGS = [
+    [0, 'Grave'], [40, 'Largo'], [60, 'Larghetto'], [66, 'Adagio'],
+    [76, 'Andante'], [108, 'Moderato'], [120, 'Allegro'],
+    [156, 'Vivace'], [176, 'Presto'], [200, 'Prestissimo']
+  ];
+  var SOUNDS = {
+    click: { accent: 1567.98, beat: 1046.5, sub: 783.99, type: 'square' },
+    wood: { accent: 880, beat: 660, sub: 495, type: 'sine' },
+    beep: { accent: 1320, beat: 990, sub: 742.5, type: 'triangle' }
+  };
+
+  function marking(bpm) {
+    var m = MARKINGS[0][1];
+    for (var i = 0; i < MARKINGS.length; i++) if (bpm >= MARKINGS[i][0]) m = MARKINGS[i][1];
+    return m;
+  }
+
+  function save() {
+    try {
+      localStorage.setItem('sb-metronome', JSON.stringify({
+        bpm: +bpmSlider.value, beats: beatsSel.value, subdiv: subdivSel.value,
+        sound: soundSel.value, vol: +volSlider.value, accent: accentChk.checked
+      }));
+    } catch (e) {}
+  }
+  function load() {
+    try {
+      var s = JSON.parse(localStorage.getItem('sb-metronome') || 'null');
+      if (!s) return;
+      if (s.bpm) bpmSlider.value = s.bpm;
+      if (s.beats) beatsSel.value = s.beats;
+      if (s.subdiv) subdivSel.value = s.subdiv;
+      if (s.sound) soundSel.value = s.sound;
+      if (s.vol != null) volSlider.value = s.vol;
+      if (s.accent != null) accentChk.checked = s.accent;
+    } catch (e) {}
+  }
 
   function ensureCtx() {
     if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
     if (ctx.state === 'suspended') ctx.resume();
   }
 
-  function click(when, isAccent) {
+  function playClick(when, freq, vol, type) {
     var osc = ctx.createOscillator();
     var gain = ctx.createGain();
     osc.connect(gain); gain.connect(ctx.destination);
-    osc.frequency.value = isAccent ? 1567.98 : 1046.5;
+    osc.type = type; osc.frequency.value = freq;
+    var v = Math.max(0.0001, vol);
     gain.gain.setValueAtTime(0.0001, when);
-    gain.gain.exponentialRampToValueAtTime(isAccent ? 0.9 : 0.6, when + 0.002);
+    gain.gain.exponentialRampToValueAtTime(v, when + 0.002);
     gain.gain.exponentialRampToValueAtTime(0.0001, when + 0.09);
     osc.start(when); osc.stop(when + 0.1);
   }
 
-  function drawDots(current) {
-    var n = +beatsSel.value, html = '';
-    for (var i = 0; i < n; i++) {
-      var cls = i === current ? 'on' : '';
-      if (i === 0 && accentChk.checked) cls += ' accent';
-      html += '<span class="' + cls + '"></span>';
-    }
-    beatsBox.innerHTML = html;
-  }
-
-  function flash(isAccent) {
-    pulse.textContent = beat + 1;
-    pulse.classList.remove('hit', 'accent');
-    void pulse.offsetWidth;
-    pulse.classList.add('hit');
-    if (isAccent) pulse.classList.add('accent');
-    drawDots(beat);
-  }
+  function totalSteps() { return (+beatsSel.value) * (+subdivSel.value); }
 
   function scheduler() {
-    var bpm = +bpmSlider.value, interval = 60 / bpm;
-    while (nextTime < ctx.currentTime + 0.12) {
-      var isAccent = accentChk.checked && beat === 0;
-      click(nextTime, isAccent);
+    var bpm = +bpmSlider.value, sub = +subdivSel.value, beats = +beatsSel.value;
+    var stepDur = 60 / bpm / sub;
+    var snd = SOUNDS[soundSel.value] || SOUNDS.click;
+    var vol = (+volSlider.value / 100) * 0.9;
+    while (nextTime < ctx.currentTime + SCHEDULE_AHEAD) {
+      var beatIdx = Math.floor(step / sub), subIdx = step % sub;
+      var state = beatState[beatIdx];
+      if (subIdx === 0) {
+        if (state !== 'mute') {
+          var isAcc = state === 'accent' || (accentChk.checked && beatIdx === 0 && !state);
+          playClick(nextTime, isAcc ? snd.accent : snd.beat, vol, snd.type);
+        }
+      } else if (state !== 'mute') {
+        playClick(nextTime, snd.sub, vol * 0.45, snd.type);
+      }
+      var captured = step;
       var delayMs = Math.max(0, (nextTime - ctx.currentTime) * 1000);
-      (function (b, acc) { setTimeout(function () { flash(acc); }, delayMs); })(beat, isAccent);
-      nextTime += interval;
-      beat = (beat + 1) % +beatsSel.value;
+      setTimeout(function () { draw(captured); }, delayMs);
+      nextTime += stepDur;
+      step = (step + 1) % totalSteps();
     }
+  }
+
+  function draw(currentStep) {
+    var sub = +subdivSel.value, beats = +beatsSel.value;
+    var beatIdx = Math.floor(currentStep / sub);
+    pulse.textContent = currentStep < 0 ? '–' : beatIdx + 1;
+    pulse.classList.remove('hit', 'accent');
+    var html = '';
+    for (var i = 0; i < beats; i++) {
+      var cls = '';
+      if (i === currentStep && currentStep >= 0) cls = 'on';
+      if ((beatState[i] === 'accent' || (accentChk.checked && i === 0 && !beatState[i]))) cls += ' accent';
+      if (beatState[i] === 'mute') cls += ' muted';
+      html += '<span class="' + cls + '" data-beat="' + i + '"></span>';
+    }
+    beatsBox.innerHTML = html;
+    if (currentStep >= 0) {
+      void pulse.offsetWidth;
+      pulse.classList.add('hit');
+      var b = Math.floor(currentStep / sub);
+      if (beatState[b] === 'accent' || (accentChk.checked && b === 0 && !beatState[b])) pulse.classList.add('accent');
+    }
+  }
+
+  beatsBox.addEventListener('click', function (e) {
+    var dot = e.target.closest('[data-beat]');
+    if (!dot) return;
+    var i = +dot.getAttribute('data-beat');
+    beatState[i] = !beatState[i] ? 'accent' : beatState[i] === 'accent' ? 'mute' : undefined;
+    if (!beatState[i]) delete beatState[i];
+    save();
+    draw(timer ? step : -1);
+  });
+
+  function lockScreen() {
+    try {
+      if ('wakeLock' in navigator) navigator.wakeLock.request('screen').then(function (l) { wakeLock = l; }).catch(function () {});
+    } catch (e) {}
+  }
+  function unlockScreen() {
+    try { if (wakeLock) { wakeLock.release(); wakeLock = null; } } catch (e) {}
   }
 
   function start() {
     ensureCtx();
-    beat = 0;
+    step = 0;
     nextTime = ctx.currentTime + 0.06;
-    timer = setInterval(scheduler, 25);
+    timer = setInterval(scheduler, LOOKAHEAD_MS);
     toggle.textContent = 'Detener';
     toggle.classList.add('stop');
+    lockScreen();
   }
   function stop() {
     clearInterval(timer); timer = null;
     toggle.textContent = 'Empezar';
     toggle.classList.remove('stop');
-    drawDots(-1);
+    unlockScreen();
+    draw(-1);
+  }
+
+  function setBpm(v) {
+    v = Math.min(240, Math.max(30, Math.round(v) || 90));
+    bpmSlider.value = v;
+    bpmVal.textContent = v;
+    markingEl.textContent = marking(v);
+    save();
   }
 
   toggle.addEventListener('click', function () { timer ? stop() : start(); });
-  bpmSlider.addEventListener('input', function () { bpmVal.textContent = bpmSlider.value; });
-  beatsSel.addEventListener('change', function () { beat = 0; drawDots(-1); });
-  drawDots(-1);
+  bpmSlider.addEventListener('input', function () { setBpm(+bpmSlider.value); });
+  document.getElementById('minus').addEventListener('click', function () { setBpm(+bpmSlider.value - 1); });
+  document.getElementById('plus').addEventListener('click', function () { setBpm(+bpmSlider.value + 1); });
+  [beatsSel, subdivSel, soundSel, volSlider, accentChk].forEach(function (el) {
+    el.addEventListener('change', function () { beatState = {}; save(); if (!timer) draw(-1); });
+  });
+
+  tapBtn.addEventListener('click', function () {
+    var now = performance.now();
+    if (taps.length && now - taps[taps.length - 1] > 2000) taps = [];
+    taps.push(now);
+    if (taps.length > 8) taps.shift();
+    tapBtn.classList.add('tapped');
+    setTimeout(function () { tapBtn.classList.remove('tapped'); }, 120);
+    if (taps.length >= 2) {
+      var diffs = [];
+      for (var i = 1; i < taps.length; i++) diffs.push(taps[i] - taps[i - 1]);
+      var avg = diffs.reduce(function (a, b) { return a + b; }, 0) / diffs.length;
+      setBpm(Math.round(60000 / avg));
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.target.matches('input, select, textarea')) return;
+    if (e.code === 'Space') { e.preventDefault(); timer ? stop() : start(); }
+    else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { e.preventDefault(); setBpm(+bpmSlider.value + (e.shiftKey ? 10 : 1)); }
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { e.preventDefault(); setBpm(+bpmSlider.value - (e.shiftKey ? 10 : 1)); }
+    else if (e.key === 't' || e.key === 'T') { tapBtn.click(); }
+  });
+
+  load();
+  bpmVal.textContent = bpmSlider.value;
+  markingEl.textContent = marking(+bpmSlider.value);
+  draw(-1);
 })();
 </script>
 </body>
