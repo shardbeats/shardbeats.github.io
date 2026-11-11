@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta name="p:domain_verify" content="b057c8e43a06a802d24c1c27cfb07d3d"/>
+<meta name="google-site-verification" content="VdLDbokxShSCLe5d8as7TuPpIL4R1LN5wWVfc7z7G2c"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Calculadora de delay y reverb por BPM | ShardBeats</title>
+<meta name="description" content="Calculadora gratis de tiempos de delay y reverb sincronizados a tu BPM: pre-delay, decay y tablas por figura rítmica normal, con puntillo y tresillo. Sin cuentas." />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta name="theme-color" content="#151617" />
+<link rel="canonical" href="https://shardbeats.github.io/web-tools/delay-reverb/" />
+<link rel="alternate" hreflang="es" href="https://shardbeats.github.io/web-tools/delay-reverb/" />
+<link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/web-tools/delay-reverb/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="ShardBeats" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:url" content="https://shardbeats.github.io/web-tools/delay-reverb/" />
+<meta property="og:title" content="Calculadora de delay y reverb por BPM | ShardBeats" />
+<meta property="og:description" content="Tiempos de delay y reverb en sincronía con tu BPM. Gratis, sin cuentas." />
+<meta property="og:image" content="https://shardbeats.github.io/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Calculadora de delay y reverb por BPM | ShardBeats" />
+<meta name="twitter:description" content="Tiempos de delay y reverb en sincronía con tu BPM. Gratis, sin cuentas." />
+<meta name="twitter:image" content="https://shardbeats.github.io/og-image.png" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?'&l='+l:'';j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-52PJ82BB");</script>
+<!-- End Google Tag Manager -->
+<link rel="icon" type="image/png" sizes="64x64" href="../../favicon-64.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+<link rel="stylesheet" href="../styles.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://shardbeats.github.io/web-tools/delay-reverb/#app",
+      "name": "Calculadora de delay y reverb por BPM",
+      "url": "https://shardbeats.github.io/web-tools/delay-reverb/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web",
+      "isAccessibleForFree": true,
+      "inLanguage": "es",
+      "author": { "@type": "Person", "name": "Dario Garcia" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://shardbeats.github.io/web-tools/delay-reverb/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calcula el tiempo de delay según el BPM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un beat dura 60000 dividido entre el BPM en milisegundos. Ese valor es la negra; las demás figuras se obtienen multiplicando o dividiendo: la redonda son 4 beats, la blanca 2, la corchea medio beat, y así. Con puntillo se multiplica por 1.5 y en tresillo por 2/3."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pre-delay y decay uso para mi reverb?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usa como pre-delay una figura corta (por ejemplo 1/64 o 1/32) y como tiempo total una figura larga (1 compás o 2). El decay es el total menos el pre-delay. La tabla de presets de arriba lo calcula por ti."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Para qué sirven los valores en Hz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Son la frecuencia equivalente a cada tiempo de delay. Sirven para sincronizar LFOs, trémolos y modulaciones al tempo de tu canción."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52PJ82BB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav aria-label="Principal">
+  <div class="container">
+    <a class="logo" href="../../" style="text-decoration:none">Shard <span>Beats</span></a>
+    <div class="nav-links">
+      <a href="../">Web tools</a>
+      <a href="../../tools/">TRAKK SUITE</a>
+      <a href="../../landing/">Pack gratis</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <section class="hero">
+    <div class="eyebrow">ShardBeats · Web tools</div>
+    <h1>Calculadora de <span class="accent">delay y reverb</span> por BPM</h1>
+    <p class="lead">Mueve el BPM y obtén al instante pre-delays, decays y tiempos de delay por figura rítmica. Gratis, sin cuentas, todo en tu navegador.</p>
+  </section>
+
+  <section class="calculator" aria-label="Calculadora">
+    <div class="bpm-row">
+      <label for="bpm">Tu BPM</label>
+      <input type="number" id="bpm" min="40" max="240" value="120" />
+      <input type="range" id="bpmRange" min="40" max="240" value="120" aria-label="BPM" />
+    </div>
+    <p class="bpm-hint">Un beat a <strong id="beatMs">500</strong> ms · Un compás (4/4) son <strong id="barMs">2000</strong> ms.</p>
+  </section>
+
+  <h2>Presets de reverb</h2>
+  <p class="section-sub">Pre-delay + decay = tiempo total. Suma o resta unos ms para empujar o arrastrar el groove.</p>
+  <table id="reverbTable" aria-label="Presets de reverb">
+    <thead><tr><th>Tamaño</th><th>Pre-delay</th><th>Decay</th><th>Total</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+  <h2>Tiempos de delay por figura</h2>
+  <p class="section-sub">Normal, con puntillo (×1.5) y tresillo (×⅔), con su equivalente en Hz para LFOs.</p>
+  <table id="delayTable" aria-label="Tiempos de delay">
+    <thead><tr><th>Figura</th><th>Normal</th><th>Con puntillo</th><th>Tresillo</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+  <section class="prose">
+    <h2>Cómo usar estos tiempos</h2>
+    <p>Los ingenieros suelen ajustar la reverb al tempo para que respire con el track: elige un <strong>pre-delay corto</strong> (1/64 o 1/32) y un <strong>total largo</strong> (uno o dos compases); el decay es la resta. Para el delay, prueba primero las figuras normales para dar profundidad sin que se note, y los puntillos o tresillos paneados para dar movimiento.</p>
+    <ul>
+      <li><strong>Caja protagonista:</strong> ajusta la reverb para que muera justo antes del siguiente golpe.</li>
+      <li><strong>Limpieza:</strong> corta graves (~600 Hz) y agudos en el envío de reverb.</li>
+      <li><strong>Profundidad:</strong> reverbs largas en cuerdas/pads, cortas y al frente en kick y bajo.</li>
+    </ul>
+    <div class="faq" id="faq">
+      <details>
+        <summary>¿Cómo se calcula el tiempo de delay según el BPM?</summary>
+        <p>Un beat dura 60000 ÷ BPM en milisegundos. La redonda son 4 beats, la blanca 2, la negra 1, la corchea 0.5, etc. Con puntillo ×1.5 y en tresillo ×⅔.</p>
+      </details>
+      <details>
+        <summary>¿Qué pre-delay y decay uso para mi reverb?</summary>
+        <p>Pre-delay corto (1/64 o 1/32) y total largo (1–2 compases). Decay = total − pre-delay. La tabla de presets lo calcula por ti.</p>
+      </details>
+      <details>
+        <summary>¿Para qué sirven los valores en Hz?</summary>
+        <p>Para sincronizar LFOs, trémolos y modulaciones al tempo de tu canción.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>Shard Btmkr · Darío García · La Piedad, Mich. · <a href="https://github.com/shardbeats">GitHub</a></p>
+    <p><a href="../../tools/">TRAKK SUITE</a> · <a href="../../landing/">Pack gratis</a> · <a href="../">Web tools</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var bpmInput = document.getElementById('bpm');
+  var bpmRange = document.getElementById('bpmRange');
+  var beatMsEl = document.getElementById('beatMs');
+  var barMsEl = document.getElementById('barMs');
+  var reverbBody = document.querySelector('#reverbTable tbody');
+  var delayBody = document.querySelector('#delayTable tbody');
+
+  var NOTES = [
+    ['1/1 (1 compás)', 4], ['1/2 (2 beats)', 2], ['1/4 (1 beat)', 1],
+    ['1/8', 0.5], ['1/16', 0.25], ['1/32', 0.125],
+    ['1/64', 0.0625], ['1/128', 0.03125]
+  ];
+  var PRESETS = [
+    ['Hall (2 compases)', 8, 32], ['Sala grande (1 compás)', 4, 64],
+    ['Sala pequeña (1/2)', 2, 128], ['Ambiente (1/4)', 1, 512]
+  ];
+
+  function fmt(ms) {
+    return ms >= 100 ? ms.toFixed(2).replace(/\.?0+$/, '') : ms.toFixed(2);
+  }
+  function hz(ms) {
+    var h = 1000 / ms;
+    return h >= 100 ? h.toFixed(0) : h >= 10 ? h.toFixed(1) : h.toFixed(2);
+  }
+  function cell(ms) { return '<strong>' + fmt(ms) + ' ms</strong> · ' + hz(ms) + ' Hz'; }
+
+  function render(bpm) {
+    var beat = 60000 / bpm;
+    beatMsEl.textContent = fmt(beat);
+    barMsEl.textContent = fmt(beat * 4);
+
+    reverbBody.innerHTML = PRESETS.map(function (p) {
+      var total = beat * p[1], pre = (beat * 4) / p[2];
+      return '<tr><td>' + p[0] + '</td><td>' + fmt(pre) + ' ms</td><td>' +
+        fmt(total - pre) + ' ms</td><td><strong>' + fmt(total) + ' ms</strong></td></tr>';
+    }).join('');
+
+    delayBody.innerHTML = NOTES.map(function (n) {
+      var base = beat * n[1];
+      return '<tr><td>' + n[0] + '</td><td>' + cell(base) + '</td><td>' +
+        cell(base * 1.5) + '</td><td>' + cell(base * 2 / 3) + '</td></tr>';
+    }).join('');
+  }
+
+  function setBpm(v) {
+    v = Math.min(240, Math.max(40, Math.round(v) || 120));
+    bpmInput.value = v; bpmRange.value = v; render(v);
+  }
+  bpmInput.addEventListener('input', function () { setBpm(+bpmInput.value); });
+  bpmRange.addEventListener('input', function () { setBpm(+bpmRange.value); });
+  render(120);
+})();
+</script>
+</body>
+</html>
