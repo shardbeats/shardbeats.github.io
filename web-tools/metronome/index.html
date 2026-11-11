@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta name="p:domain_verify" content="b057c8e43a06a802d24c1c27cfb07d3d"/>
+<meta name="google-site-verification" content="VdLDbokxShSCLe5d8as7TuPpIL4R1LN5wWVfc7z7G2c"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Metrónomo online gratis | ShardBeats</title>
+<meta name="description" content="Metrónomo online gratis para músicos: BPM de 30 a 240, compás y acento configurables. Sin cuentas, todo en tu navegador." />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta name="theme-color" content="#151617" />
+<link rel="canonical" href="https://shardbeats.github.io/web-tools/metronome/" />
+<link rel="alternate" hreflang="es" href="https://shardbeats.github.io/web-tools/metronome/" />
+<link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/web-tools/metronome/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="ShardBeats" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:url" content="https://shardbeats.github.io/web-tools/metronome/" />
+<meta property="og:title" content="Metrónomo online gratis | ShardBeats" />
+<meta property="og:description" content="Practica a tiempo: BPM, compás y acento configurables. Gratis, sin cuentas." />
+<meta property="og:image" content="https://shardbeats.github.io/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Metrónomo online gratis | ShardBeats" />
+<meta name="twitter:description" content="Practica a tiempo: BPM, compás y acento configurables. Gratis, sin cuentas." />
+<meta name="twitter:image" content="https://shardbeats.github.io/og-image.png" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?'&l='+l:'';j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-52PJ82BB");</script>
+<!-- End Google Tag Manager -->
+<link rel="icon" type="image/png" sizes="64x64" href="../../favicon-64.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+.metronome {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  margin: 28px 0 40px;
+  text-align: center;
+}
+.pulse {
+  width: 96px; height: 96px; margin: 0 auto 20px;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 34px; font-weight: 800; color: var(--muted);
+  transition: transform .06s ease, border-color .06s ease, color .06s ease, box-shadow .06s ease;
+}
+.pulse.hit { transform: scale(1.12); border-color: var(--amber); color: var(--amber); box-shadow: 0 0 32px rgba(245, 166, 35, .45); }
+.pulse.hit.accent { background: rgba(245, 166, 35, .15); }
+.beats { display: flex; gap: 10px; justify-content: center; margin-bottom: 22px; }
+.beats span {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--bg2); border: 1px solid var(--border);
+}
+.beats span.on { background: var(--amber); border-color: var(--amber); }
+.beats span.on.accent { box-shadow: 0 0 12px rgba(245, 166, 35, .8); }
+.bpm-big { font-size: 64px; font-weight: 800; color: var(--amber); line-height: 1; }
+.bpm-big small { font-size: 18px; color: var(--muted); font-weight: 600; }
+.controls { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+.controls input[type="range"] { width: 100%; accent-color: var(--amber); }
+.controls .row2 { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; align-items: center; }
+.controls label { font-size: 14px; color: var(--muted); font-weight: 600; }
+.controls select, .controls input[type="number"] {
+  background: var(--bg2); color: var(--text);
+  border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px;
+  font-size: 15px; font-family: inherit;
+}
+.btn-big {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--amber); color: var(--onaccent);
+  font-weight: 800; font-size: 18px; padding: 15px 54px; border-radius: 999px;
+  border: 0; cursor: pointer; font-family: inherit;
+  box-shadow: 0 8px 24px rgba(245, 166, 35, .25);
+}
+.btn-big:hover { background: var(--amber2); }
+.btn-big.stop { background: transparent; border: 1px solid var(--border); color: var(--text); box-shadow: none; }
+.check { display: flex; gap: 8px; align-items: center; justify-content: center; font-size: 14px; color: var(--muted); }
+.check input { accent-color: var(--amber); width: 18px; height: 18px; }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://shardbeats.github.io/web-tools/metronome/#app",
+      "name": "Metrónomo online gratis",
+      "url": "https://shardbeats.github.io/web-tools/metronome/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web",
+      "isAccessibleForFree": true,
+      "inLanguage": "es",
+      "author": { "@type": "Person", "name": "Dario Garcia" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://shardbeats.github.io/web-tools/metronome/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué BPM uso para practicar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Empieza lento (60-70 BPM) hasta tocar limpio y sube de 5 en 5. Para boombap y hip-hop, practica entre 85 y 95 BPM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo practico un compás distinto de 4/4?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cambia los beats por compás arriba: 3 para 3/4, 6 para 6/8. El primer beat suena acentuado para marcar el inicio del compás."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52PJ82BB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav aria-label="Principal">
+  <div class="container">
+    <a class="logo" href="../../" style="text-decoration:none">Shard <span>Beats</span></a>
+    <div class="nav-links">
+      <a href="../">Web tools</a>
+      <a href="../../tools/">TRAKK SUITE</a>
+      <a href="../../landing/">Pack gratis</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <section class="hero">
+    <div class="eyebrow">ShardBeats · Web tools</div>
+    <h1>Metrónomo <span class="accent">online</span></h1>
+    <p class="lead">Un clic simple para practicar a tiempo. Gratis, sin cuentas, todo en tu navegador.</p>
+  </section>
+
+  <section class="metronome" aria-label="Metrónomo">
+    <div class="pulse" id="pulse">1</div>
+    <div class="beats" id="beats"></div>
+    <div class="bpm-big"><span id="bpmVal">90</span> <small>BPM</small></div>
+    <div class="controls">
+      <input type="range" id="bpm" min="30" max="240" value="90" aria-label="BPM" />
+      <div class="row2">
+        <label>Beats por compás
+          <select id="beatsPerBar">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4" selected>4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+        </label>
+        <label class="check"><input type="checkbox" id="accent" checked /> Acento en el 1</label>
+      </div>
+      <div class="row2">
+        <button class="btn-big" id="toggle" type="button">Empezar</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose">
+    <h2>Cómo practicar con metrónomo</h2>
+    <p>Empieza <strong>lento</strong> (60–70 BPM) hasta que salga limpio y sube de 5 en 5. Para boombap y hip-hop, el rango natural está entre <strong>85 y 95 BPM</strong>. Si cambias de compás, ajusta los beats por compás: el primer golpe suena acentuado para marcar el inicio.</p>
+    <div class="faq">
+      <details>
+        <summary>¿Qué BPM uso para practicar?</summary>
+        <p>Empieza lento (60-70 BPM) hasta tocar limpio y sube de 5 en 5. Para boombap y hip-hop, practica entre 85 y 95 BPM.</p>
+      </details>
+      <details>
+        <summary>¿Cómo practico un compás distinto de 4/4?</summary>
+        <p>Cambia los beats por compás: 3 para 3/4, 6 para 6/8. El primer beat suena acentuado para marcar el inicio del compás.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>Shard Btmkr · Darío García · La Piedad, Mich. · <a href="https://github.com/shardbeats">GitHub</a></p>
+    <p><a href="../../tools/">TRAKK SUITE</a> · <a href="../../landing/">Pack gratis</a> · <a href="../">Web tools</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var bpmSlider = document.getElementById('bpm');
+  var bpmVal = document.getElementById('bpmVal');
+  var beatsSel = document.getElementById('beatsPerBar');
+  var accentChk = document.getElementById('accent');
+  var toggle = document.getElementById('toggle');
+  var pulse = document.getElementById('pulse');
+  var beatsBox = document.getElementById('beats');
+
+  var ctx = null, timer = null, nextTime = 0, beat = 0;
+
+  function ensureCtx() {
+    if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+    if (ctx.state === 'suspended') ctx.resume();
+  }
+
+  function click(when, isAccent) {
+    var osc = ctx.createOscillator();
+    var gain = ctx.createGain();
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.frequency.value = isAccent ? 1567.98 : 1046.5;
+    gain.gain.setValueAtTime(0.0001, when);
+    gain.gain.exponentialRampToValueAtTime(isAccent ? 0.9 : 0.6, when + 0.002);
+    gain.gain.exponentialRampToValueAtTime(0.0001, when + 0.09);
+    osc.start(when); osc.stop(when + 0.1);
+  }
+
+  function drawDots(current) {
+    var n = +beatsSel.value, html = '';
+    for (var i = 0; i < n; i++) {
+      var cls = i === current ? 'on' : '';
+      if (i === 0 && accentChk.checked) cls += ' accent';
+      html += '<span class="' + cls + '"></span>';
+    }
+    beatsBox.innerHTML = html;
+  }
+
+  function flash(isAccent) {
+    pulse.textContent = beat + 1;
+    pulse.classList.remove('hit', 'accent');
+    void pulse.offsetWidth;
+    pulse.classList.add('hit');
+    if (isAccent) pulse.classList.add('accent');
+    drawDots(beat);
+  }
+
+  function scheduler() {
+    var bpm = +bpmSlider.value, interval = 60 / bpm;
+    while (nextTime < ctx.currentTime + 0.12) {
+      var isAccent = accentChk.checked && beat === 0;
+      click(nextTime, isAccent);
+      var delayMs = Math.max(0, (nextTime - ctx.currentTime) * 1000);
+      (function (b, acc) { setTimeout(function () { flash(acc); }, delayMs); })(beat, isAccent);
+      nextTime += interval;
+      beat = (beat + 1) % +beatsSel.value;
+    }
+  }
+
+  function start() {
+    ensureCtx();
+    beat = 0;
+    nextTime = ctx.currentTime + 0.06;
+    timer = setInterval(scheduler, 25);
+    toggle.textContent = 'Detener';
+    toggle.classList.add('stop');
+  }
+  function stop() {
+    clearInterval(timer); timer = null;
+    toggle.textContent = 'Empezar';
+    toggle.classList.remove('stop');
+    drawDots(-1);
+  }
+
+  toggle.addEventListener('click', function () { timer ? stop() : start(); });
+  bpmSlider.addEventListener('input', function () { bpmVal.textContent = bpmSlider.value; });
+  beatsSel.addEventListener('change', function () { beat = 0; drawDots(-1); });
+  drawDots(-1);
+})();
+</script>
+</body>
+</html>
