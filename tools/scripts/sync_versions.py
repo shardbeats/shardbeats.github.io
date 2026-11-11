@@ -38,6 +38,7 @@ REPOS = {
     'trakkname': 'TRAKKNAME',
     'trakkout': 'TRAKKOUT',
     'trakklicense': 'TRAKKLICENSE',
+    'trakkart': 'TRAKKART',
 }
 
 

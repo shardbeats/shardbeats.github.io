@@ -135,6 +135,25 @@
   </url>
 
   <url>
+    <loc>https://shardbeats.github.io/tools/trakkart/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tools/trakkart/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tools/en/trakkart/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tools/trakkart/" />
+  </url>
+  <url>
+    <loc>https://shardbeats.github.io/tools/en/trakkart/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tools/trakkart/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tools/en/trakkart/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tools/trakkart/" />
+  </url>
+
+  <url>
     <loc>https://shardbeats.github.io/tools/privacy.html</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>yearly</changefreq>

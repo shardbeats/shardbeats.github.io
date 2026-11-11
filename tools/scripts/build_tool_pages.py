@@ -462,6 +462,73 @@ TOOLS = [
             ],
         },
     },
+    {
+        "slug": "trakkart",
+        "name": "TRAKKART",
+        "version": "1.4.0",
+        "repo": "https://github.com/shardbeats/TRAKKART",
+        "category": "MultimediaApplication",
+        "es": {
+            "title": "Portadas con dithering y animación, offline | TRAKKART",
+            "desc": "Estudio offline de portadas: crea stills con dithering, anímalos y exporta el paquete. Sin internet, sin cuentas, sin telemetría.",
+            "tagline": "Portadas con dithering + animación",
+            "lead": "La portada de tu beat sin salir de tu máquina: genera stills con dithering, anímalos y exporta el paquete listo para publicar.",
+            "bullets": [
+                ("Stills con dithering", "Estética retro y texturas controladas, con vista previa al 100% y zoom para revisar cada píxel."),
+                ("Anímalos", "Convierte tus stills en animaciones con densidad de partículas que escala al tamaño del lienzo."),
+                ("Presets y paletas", "Presets y paletas incluidos, modo ASCII y CLI para procesar sin abrir la interfaz."),
+                ("Exporta el paquete", "Still + animación listos para YouTube, Spotify y redes, todo generado en local."),
+            ],
+            "steps": [
+                ("Crea tu still", "Elige preset y paleta, ajusta el lienzo con fit, zoom y pan."),
+                ("Aplica dithering", "Revisa al 100% y compara variantes lado a lado."),
+                ("Anímalo", "Activa el movimiento y previsualiza el resultado."),
+                ("Exporta", "Genera el paquete final sin subir nada a internet."),
+            ],
+            "specs": [
+                ("Salida", "Stills + animación (paquete listo para publicar)"),
+                ("Sistema", "Windows 10 / 11 (64 bits)"),
+                ("Distribución", ".exe portable e instalador"),
+                ("Licencia", "MIT"),
+            ],
+            "faq": [
+                ("¿Necesito internet para usarlo?", "No. Todo el proceso ocurre en tu equipo, sin cuentas ni telemetría."),
+                ("¿Es gratis?", "Sí. Licencia MIT, sin cuenta y sin límite de uso."),
+                ("¿Puedo usarlo desde la terminal?", "Sí. El modo CLI procesa presets y paletas sin abrir la interfaz."),
+                ("¿Las portadas sirven para Spotify y YouTube?", "Sí. Exportas el paquete con el still y la animación listos para cada plataforma."),
+            ],
+        },
+        "en": {
+            "title": "Dithered cover art and animation, offline | TRAKKART",
+            "desc": "Offline cover-art studio: craft dithered stills, animate them and export the bundle. No internet, no accounts, no telemetry.",
+            "tagline": "Dithered covers + animation",
+            "lead": "Your beat artwork without leaving your machine: craft dithered stills, animate them and export a publish-ready bundle.",
+            "bullets": [
+                ("Dithered stills", "Retro look with controlled textures, 100% preview and zoom to check every pixel."),
+                ("Animate them", "Turn stills into motion with particle density that scales to canvas size."),
+                ("Presets and palettes", "Bundled presets and palettes, ASCII mode and CLI for headless runs."),
+                ("Export the bundle", "Still + animation ready for YouTube, Spotify and socials, all rendered locally."),
+            ],
+            "steps": [
+                ("Craft your still", "Pick a preset and palette, frame the canvas with fit, zoom and pan."),
+                ("Apply dithering", "Check at 100% and compare variants side by side."),
+                ("Animate it", "Turn on motion and preview the result."),
+                ("Export", "Render the final bundle with nothing uploaded anywhere."),
+            ],
+            "specs": [
+                ("Output", "Stills + animation (publish-ready bundle)"),
+                ("System", "Windows 10 / 11 (64-bit)"),
+                ("Distribution", "Portable .exe and installer"),
+                ("License", "MIT"),
+            ],
+            "faq": [
+                ("Do I need internet to use it?", "No. Everything runs on your machine, no accounts, no telemetry."),
+                ("Is it free?", "Yes. MIT licensed, no account, no usage limit."),
+                ("Can I run it from the terminal?", "Yes. CLI mode processes presets and palettes without opening the UI."),
+                ("Do the covers work for Spotify and YouTube?", "Yes. You export the bundle with the still and animation ready for each platform."),
+            ],
+        },
+    },
 ]
 
 UI = {
@@ -484,7 +551,7 @@ UI = {
         "spec_version": "Versión",
         "faq_title": "Preguntas frecuentes",
         "others": "Otras herramientas de la suite",
-        "others_lead": "Seis herramientas independientes. Usa solo la que necesites.",
+        "others_lead": "Siete herramientas independientes. Usa solo la que necesites.",
         "all_tools": "Ver todas las herramientas",
         "free": "Gratis y open source (MIT)",
         "footer_legal": "Privacidad",
@@ -519,7 +586,7 @@ UI = {
         "spec_version": "Version",
         "faq_title": "Frequently asked questions",
         "others": "Other tools in the suite",
-        "others_lead": "Six independent tools. Use only the ones you need.",
+        "others_lead": "Seven independent tools. Use only the ones you need.",
         "all_tools": "See all tools",
         "free": "Free and open source (MIT)",
         "footer_legal": "Privacy",
@@ -540,6 +607,11 @@ UI = {
 PAGE = Template("""<!doctype html>
 <html lang="$lang">
 <head>
+<meta name="p:domain_verify" content="b057c8e43a06a802d24c1c27cfb07d3d"/>
+<meta name="google-site-verification" content="VdLDbokxShSCLe5d8as7TuPpIL4R1LN5wWVfc7z7G2c"/>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?'&l='+l:'';j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-52PJ82BB");</script>
+<!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>$title</title>
@@ -606,6 +678,9 @@ PAGE = Template("""<!doctype html>
   <link rel="stylesheet" href="${root_rel}styles.css" />
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52PJ82BB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   <div id="bg3d" aria-hidden="true"></div>
   <header>
   <nav aria-label="$navlabel">

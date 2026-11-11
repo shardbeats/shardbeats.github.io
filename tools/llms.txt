@@ -1,6 +1,6 @@
 # ShardBeats TRAKK SUITE
 
-> Six free, offline, open-source tools for beatmakers: convert sample libraries to WAV for the Roland SP-404MK2, peak-normalize clips, generate beat titles, render beats to 1080p video, and produce beat license contracts as PDF. Portable Windows executables. No accounts, no cloud, no subscriptions. MIT licensed.
+> Seven free, offline, open-source tools for beatmakers: convert sample libraries to WAV for the Roland SP-404MK2, peak-normalize clips, generate beat titles, render beats to 1080p video, produce beat license contracts as PDF, and craft dithered cover art with animation. Portable Windows executables. No accounts, no cloud, no subscriptions. MIT licensed.
 
 Canonical site: https://shardbeats.github.io/tools/
 Spanish version: https://shardbeats.github.io/tools/
@@ -17,6 +17,7 @@ Source: https://github.com/shardbeats
 - [TRAKKNAME](https://shardbeats.github.io/tools/trakkname/) — Beat title generator by artist, genre and mood (EN/ES). Android build also available. [English](https://shardbeats.github.io/tools/en/trakkname/) · Source: https://github.com/shardbeats/TRAKKNAME
 - [TRAKKOUT](https://shardbeats.github.io/tools/trakkout/) — Turn a beat and artwork into a 1080p MP4 for YouTube via FFmpeg, with templates and scheduled publishing. [English](https://shardbeats.github.io/tools/en/trakkout/) · Source: https://github.com/shardbeats/TRAKKOUT
 - [TRAKKLICENSE](https://shardbeats.github.io/tools/trakklicense/) — Generate beat license contracts as PDF (EN/ES) with sequential folios and SHA256 evidence, offline. [English](https://shardbeats.github.io/tools/en/trakklicense/) · Source: https://github.com/shardbeats/TRAKKLICENSE
+- [TRAKKART](https://shardbeats.github.io/tools/trakkart/) — Offline cover-art studio: dithered stills, animate them and export the bundle. [English](https://shardbeats.github.io/tools/en/trakkart/) · Source: https://github.com/shardbeats/TRAKKART
 
 ## Guides
 
