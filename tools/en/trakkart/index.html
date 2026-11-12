@@ -9,7 +9,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dithered cover art and animation, offline | TRAKKART</title>
-  <meta name="description" content="Offline cover-art studio: craft dithered stills, animate them and export the bundle. No internet, no accounts, no telemetry." />
+  <meta name="description" content="Offline cover-art studio: turn any image into dithered artwork for singles, posters, merch and socials. 36 engines, free canvas, export the bundle. No internet, no accounts." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="theme-color" content="#151617" />
   <link rel="canonical" href="https://shardbeats.github.io/tools/en/trakkart/" />
@@ -22,14 +22,14 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://shardbeats.github.io/tools/en/trakkart/" />
   <meta property="og:title" content="Dithered cover art and animation, offline | TRAKKART" />
-  <meta property="og:description" content="Offline cover-art studio: craft dithered stills, animate them and export the bundle. No internet, no accounts, no telemetry." />
+  <meta property="og:description" content="Offline cover-art studio: turn any image into dithered artwork for singles, posters, merch and socials. 36 engines, free canvas, export the bundle. No internet, no accounts." />
   <meta property="og:image" content="https://shardbeats.github.io/tools/assets/og-trakkart.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="TRAKKART — Dithered covers + animation" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Dithered cover art and animation, offline | TRAKKART" />
-  <meta name="twitter:description" content="Offline cover-art studio: craft dithered stills, animate them and export the bundle. No internet, no accounts, no telemetry." />
+  <meta name="twitter:description" content="Offline cover-art studio: turn any image into dithered artwork for singles, posters, merch and socials. 36 engines, free canvas, export the bundle. No internet, no accounts." />
   <meta name="twitter:image" content="https://shardbeats.github.io/tools/assets/og-trakkart.png" />
 
   <link rel="icon" type="image/png" sizes="64x64" href="../../favicon-64.png" />
@@ -72,10 +72,10 @@
     {
       "@type": "SoftwareApplication",
       "name": "TRAKKART",
-      "description": "Offline cover-art studio: craft dithered stills, animate them and export the bundle. No internet, no accounts, no telemetry.",
+      "description": "Offline cover-art studio: turn any image into dithered artwork for singles, posters, merch and socials. 36 engines, free canvas, export the bundle. No internet, no accounts.",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "Windows 10, Windows 11",
-      "softwareVersion": "1.4.0",
+      "softwareVersion": "1.5.0",
       "downloadUrl": "https://github.com/shardbeats/TRAKKART/releases/latest",
       "installUrl": "https://github.com/shardbeats/TRAKKART/releases/latest",
       "softwareHelp": "https://shardbeats.github.io/tools/en/trakkart/",
@@ -161,7 +161,7 @@
       <div class="eyebrow">ShardBeats TRAKK SUITE</div>
       <h1>TRAKKART</h1>
       <p class="tool-tagline">Dithered covers + animation</p>
-      <p class="lead">Your beat artwork without leaving your machine: craft dithered stills, animate them and export a publish-ready bundle.</p>
+      <p class="lead">Your beat artwork without leaving your machine: turn any image into dithered artwork, animate it and export a publish-ready bundle.</p>
       <div class="cta-row">
         <a class="dl-btn big" href="https://github.com/shardbeats/TRAKKART/releases/latest" target="_blank" rel="noopener">Download for Windows</a>
         <a class="repo-link" href="https://github.com/shardbeats/TRAKKART" target="_blank" rel="noopener">View the source</a>
@@ -169,7 +169,7 @@
       </div>
       <figure class="shot">
         <img src="../../assets/shot-trakkart.png" alt="TRAKKART screenshot" width="1440" height="900" loading="lazy" />
-        <figcaption>TRAKKART v1.4.0</figcaption>
+        <figcaption>TRAKKART v1.5.0</figcaption>
       </figure>
     </div>
   </section>
@@ -178,10 +178,11 @@
     <div class="container prose">
       <h2>What it does</h2>
       <ul class="feature-list">
-        <li><strong>Dithered stills</strong> Retro look with controlled textures, 100% preview and zoom to check every pixel.</li>
-        <li><strong>Animate them</strong> Turn stills into motion with particle density that scales to canvas size.</li>
-        <li><strong>Presets and palettes</strong> Bundled presets and palettes, ASCII mode and CLI for headless runs.</li>
-        <li><strong>Export the bundle</strong> Still + animation ready for YouTube, Spotify and socials, all rendered locally.</li>
+        <li><strong>36 dither engines</strong> Ordered (Bayer, blue-noise, halftone), error diffusion, Hilbert, CMYK, ASCII, edges and motif builder.</li>
+        <li><strong>Canvas first</strong> Ratio presets or free custom size with cover, contain, stretch and blur framing.</li>
+        <li><strong>Your color</strong> TRAKK palettes (BW, SLIME, VAPOR, EMBER), palette library, auto-extract from source, duotone, posterize and split-tone.</li>
+        <li><strong>FX, datamosh and particles</strong> Reorderable effect stack, 7 mosh flavors and a seamlessly looping particle chain.</li>
+        <li><strong>Export the bundle</strong> Canvas-size image + 1080p thumb, vector SVG, animated GIF/WebP, MP4, metadata.json, ink separations and SP-404MK2 screen BMP.</li>
       </ul>
     </div>
   </section>
@@ -190,10 +191,10 @@
     <div class="container prose">
       <h2>How to use it</h2>
       <ol class="step-list">
-        <li><strong>Craft your still</strong> Pick a preset and palette, frame the canvas with fit, zoom and pan.</li>
-        <li><strong>Apply dithering</strong> Check at 100% and compare variants side by side.</li>
-        <li><strong>Animate it</strong> Turn on motion and preview the result.</li>
-        <li><strong>Export</strong> Render the final bundle with nothing uploaded anywhere.</li>
+        <li><strong>Open your image</strong> File → Open, drag it onto the window or paste with Ctrl+V.</li>
+        <li><strong>Pick the engine</strong> The ◀ ▶ buttons cycle the 36 engines; tune color, depth and inks.</li>
+        <li><strong>Animate it (optional)</strong> Preview in the VIDEO panel: GIF at document size, MP4 at 1080p.</li>
+        <li><strong>Export</strong> Export (Ctrl+Shift+S) or quick export (Ctrl+S). Installer or portable, no internet.</li>
       </ol>
     </div>
   </section>
@@ -205,11 +206,11 @@
       <h2>Specifications</h2>
       <table class="spec-table">
         <tbody>
-          <tr><th scope="row">Version</th><td>1.4.0</td></tr>
-          <tr><th scope="row">Output</th><td>Stills + animation (publish-ready bundle)</td></tr>
+          <tr><th scope="row">Version</th><td>1.5.0</td></tr>
+          <tr><th scope="row">Output</th><td>Image + 1080p thumb, SVG, GIF/WebP, MP4, metadata.json, SP-404MK2 BMP</td></tr>
           <tr><th scope="row">System</th><td>Windows 10 / 11 (64-bit)</td></tr>
-          <tr><th scope="row">Distribution</th><td>Portable .exe and installer</td></tr>
-          <tr><th scope="row">License</th><td>MIT</td></tr>
+          <tr><th scope="row">Distribution</th><td>Installer .exe and portable .zip</td></tr>
+          <tr><th scope="row">License</th><td>MIT (code); bundled FFmpeg under GPLv3</td></tr>
         </tbody>
       </table>
     </div>
@@ -219,10 +220,10 @@
     <div class="container prose">
       <h2>Frequently asked questions</h2>
       <div class="faq">
-        <details><summary>Do I need internet to use it?</summary><p>No. Everything runs on your machine, no accounts, no telemetry.</p></details>
-        <details><summary>Is it free?</summary><p>Yes. MIT licensed, no account, no usage limit.</p></details>
+        <details><summary>Do I need internet to use it?</summary><p>No. Zero network, zero telemetry, zero accounts. Everything lives in the app data folder.</p></details>
+        <details><summary>Is it free?</summary><p>Yes. MIT-licensed code, no account, no usage limit.</p></details>
         <details><summary>Can I run it from the terminal?</summary><p>Yes. CLI mode processes presets and palettes without opening the UI.</p></details>
-        <details><summary>Do the covers work for Spotify and YouTube?</summary><p>Yes. You export the bundle with the still and animation ready for each platform.</p></details>
+        <details><summary>What if SmartScreen warns me?</summary><p>That is normal for unsigned builds: More info → Run anyway. Installer and portable ship with published SHA-256 checksums.</p></details>
       </div>
     </div>
   </section>
