@@ -30,6 +30,30 @@
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?'&l='+l:'';j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-NMVJZ8VL");</script>
 <!-- End Google Tag Manager -->
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'url_passthrough', true);
+    gtag('set', 'ads_data_redaction', true);
+    try {
+      if (localStorage.getItem('sb-consent') === 'granted') {
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          analytics_storage: 'granted'
+        });
+      }
+    } catch (e) {}
+  </script>
 <link rel="icon" type="image/png" sizes="64x64" href="../../favicon-64.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
 <link rel="stylesheet" href="../styles.css" />
@@ -216,5 +240,43 @@
   render(120);
 })();
 </script>
+
+  <div id="consent-banner" class="consent" role="dialog" aria-live="polite" aria-label="Consentimiento de cookies" hidden>
+    <p><strong>Cookies y analítica.</strong> Usamos Google Analytics para medir visitas y uso de las herramientas. Puedes aceptar o rechazar; con "Rechazar" no se guarda ninguna cookie de medición. <a href="../../tools/privacy.html">Política de privacidad</a>.</p>
+    <div class="consent-actions">
+      <button class="consent-btn ghost" type="button" data-consent="denied">Rechazar</button>
+      <button class="consent-btn" type="button" data-consent="granted">Aceptar</button>
+    </div>
+  </div>
+  <script>
+    (function(){
+      var banner = document.getElementById('consent-banner');
+      if (!banner) return;
+      var stored = null;
+      try { stored = localStorage.getItem('sb-consent'); } catch (e) {}
+      if (!stored) banner.hidden = false;
+      function apply(state) {
+        try { localStorage.setItem('sb-consent', state); } catch (e) {}
+        gtag('consent', 'update', {
+          ad_storage: state,
+          ad_user_data: state,
+          ad_personalization: state,
+          analytics_storage: state
+        });
+        banner.hidden = true;
+      }
+      banner.addEventListener('click', function(e){
+        var btn = e.target.closest('[data-consent]');
+        if (btn) apply(btn.getAttribute('data-consent'));
+      });
+      document.querySelectorAll('[data-consent-reset]').forEach(function(el){
+        el.addEventListener('click', function(e){
+          e.preventDefault();
+          banner.hidden = true;
+          banner.hidden = false;
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
