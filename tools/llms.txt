@@ -1,6 +1,6 @@
 # ShardBeats TRAKK SUITE
 
-> Seven free, offline, open-source tools for beatmakers: convert sample libraries to WAV for the Roland SP-404MK2, peak-normalize clips, generate beat titles, render beats to 1080p video, produce beat license contracts as PDF, and craft dithered cover art with animation. Portable Windows executables. No accounts, no cloud, no subscriptions. MIT licensed.
+> Seven free, offline, open-source tools for beatmakers: convert sample libraries to WAV for the Roland SP-404MK2, peak-normalize clips, generate beat titles, render beats to 1080p video, produce beat license contracts as PDF, and craft dithered cover art with animation. Portable Windows executables. No accounts, no cloud, no subscriptions. Code licensed GPL-3.0-only (versions published before 2026-11-23 remain MIT).
 
 Canonical site: https://shardbeats.github.io/tools/
 Spanish version: https://shardbeats.github.io/tools/
