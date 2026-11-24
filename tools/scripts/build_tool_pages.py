@@ -560,6 +560,7 @@ UI = {
         "footer_cookies": "Cookies",
         "footer_pack": "Pack de beats gratis",
         "footer_license": "Licencia del sitio: CC BY-NC-SA 4.0",
+        "footer_brand": "canal y sitio ShardBeats",
         "consent_text": "<strong>Cookies y analítica.</strong> Usamos Google Analytics para contar visitas y clics en descargas. Puedes aceptar o rechazar; con \"Rechazar\" no se guarda ninguna cookie de medición.",
         "consent_more": "Política de privacidad",
         "consent_yes": "Aceptar",
@@ -596,6 +597,7 @@ UI = {
         "footer_cookies": "Cookies",
         "footer_pack": "Free beat pack",
         "footer_license": "Site license: CC BY-NC-SA 4.0",
+        "footer_brand": "ShardBeats channel & site",
         "consent_text": "<strong>Cookies and analytics.</strong> We use Google Analytics to count visits and download clicks. You can accept or decline; choosing \"Decline\" stores no measurement cookie.",
         "consent_more": "Privacy policy",
         "consent_yes": "Accept",
@@ -779,7 +781,7 @@ $others_cards
   </main>
 
   <footer>
-    <p>Shard Btmkr - Dario Garcia - La Piedad, Mich. - <a href="https://github.com/shardbeats">github.com/shardbeats</a></p>
+    <p>Shard Btmkr - Dario Garcia - $footer_brand - La Piedad, Mich. - <a href="https://github.com/shardbeats">github.com/shardbeats</a></p>
     <p><a href="${root_rel}privacy.html">$footer_legal</a> · <a href="#consent-banner" data-consent-reset>$footer_cookies</a> · <a href="$home_pack">$footer_pack</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">$footer_license</a> · <a href="$alt_other" hreflang="$otherlang" lang="$otherlang2">$lang_switch_full</a></p>
   </footer>
 
