@@ -67,11 +67,11 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
 @media (max-width: 480px) { .nav-links { gap: 12px; } }
 
 main { flex: 1; }
-.hero { padding: 56px 0 28px; text-align: center; }
+.hero { padding: 56px 0 28px; text-align: left; }
 .eyebrow { color: var(--amber); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .14em; margin-bottom: 12px; }
 h1 { font-size: clamp(30px, 5vw, 52px); font-weight: 800; letter-spacing: -.02em; line-height: 1.08; }
 h1 .accent { color: var(--amber); }
-.lead { color: var(--muted); max-width: 640px; margin: 14px auto 0; }
+.lead { color: var(--muted); max-width: 640px; margin: 14px 0 0; }
 
 .calculator {
   background: var(--card);
