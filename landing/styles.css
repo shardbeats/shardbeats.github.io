@@ -38,6 +38,9 @@ a{color:var(--amber);text-decoration:none;}
 a:hover{text-decoration:underline;}
 :focus-visible{outline:2px solid var(--amber);outline-offset:2px;}
 :focus:not(:focus-visible){outline:none;}
+.skip{position:absolute;left:16px;top:-56px;z-index:200;background:var(--amber);color:var(--onaccent);font-weight:700;font-size:14px;padding:10px 18px;border-radius:999px;text-decoration:none;}
+.skip:focus{top:12px;}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;}}
 img{max-width:100%;height:auto;display:block;}
 
 /* ===== Layout ===== */

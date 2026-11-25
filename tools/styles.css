@@ -4,6 +4,9 @@
     a{color:var(--amber);text-decoration:none;} a:hover{text-decoration:underline;}
 :focus-visible{outline:2px solid var(--amber);outline-offset:2px;}
 :focus:not(:focus-visible){outline:none;}
+.skip{position:absolute;left:16px;top:-56px;z-index:200;background:var(--amber);color:var(--onaccent);font-weight:700;font-size:14px;padding:10px 18px;border-radius:999px;text-decoration:none;}
+.skip:focus{top:12px;}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;}}
 .kit-list{list-style:none;padding:0;margin:16px 0 20px;display:flex;flex-direction:column;gap:8px;}
 .kit-list li{padding:8px 12px;border:1px solid var(--border);border-radius:8px;background:var(--bg2);font-size:14px;line-height:1.5;}
 .kit-list strong{color:var(--amber);}
@@ -123,6 +126,7 @@ nav,section,footer{position:relative;z-index:1;}
     .tool-hero .lead{max-width:720px;}
     .tool-hero .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;}
     .dl-btn.big{font-size:15px;padding:14px 26px;}
+    .dl-btn,.repo-link{min-height:44px;}
     .shot{margin:36px 0 0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--bg2);}
     .shot img{display:block;width:100%;height:auto;}
     .shot figcaption{font-size:12px;color:var(--muted);padding:10px 14px;border-top:1px solid var(--border);}

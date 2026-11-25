@@ -61,9 +61,10 @@
 .filter-side{grid-column:2;grid-row:1;position:sticky;top:16px;min-width:0;}
 .filter-title{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 8px;}
 .filter-row{display:flex;flex-direction:column;align-items:stretch;gap:8px;margin:0;}
-.filter-btn{font:inherit;font-size:13px;font-weight:700;padding:7px 16px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;text-align:left;}
+.filter-btn{font:inherit;font-size:13px;font-weight:700;min-height:44px;padding:7px 16px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;text-align:left;}
 .filter-btn:hover{border-color:var(--amber);color:var(--amber);}
 .filter-btn[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:var(--onaccent);}
+.filter-count{font-size:13px;color:var(--muted);margin:8px 0 0;}
 @media (max-width:900px){.tut-layout{grid-template-columns:1fr;}.tut-layout .tool-grid,.filter-side{grid-column:auto;grid-row:auto;}.filter-side{position:static;}.filter-row{flex-direction:row;flex-wrap:wrap;}}
 </style>
 </head>
@@ -105,6 +106,7 @@
     <button class="filter-btn" type="button" data-filter="vender" aria-pressed="false">Sell</button>
     <button class="filter-btn" type="button" data-filter="efectos" aria-pressed="false">Effects</button>
   </div>
+  <p class="filter-count" aria-live="polite"></p>
     </aside>
     <div class="tool-grid">
     <div class="tool-card" data-tags="video workflow">
@@ -259,6 +261,12 @@
       if (!row) return;
       var btns = Array.prototype.slice.call(row.querySelectorAll('[data-filter]'));
       var cards = Array.prototype.slice.call(document.querySelectorAll('.tool-card'));
+      var count = document.querySelector('.filter-count');
+      function updateCount(){
+        if (!count) return;
+        var n = cards.filter(function(c){ return !c.hidden; }).length;
+        count.textContent = n + ' tutorials';
+      }
       row.addEventListener('click', function(e){
         var btn = e.target.closest('[data-filter]');
         if (!btn) return;
@@ -268,7 +276,9 @@
           var tags = (c.getAttribute('data-tags') || '').split(' ');
           c.hidden = !(f === 'todo' || tags.indexOf(f) > -1);
         });
+        updateCount();
       });
+      updateCount();
     })();
   </script>
 </body>
