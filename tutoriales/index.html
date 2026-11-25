@@ -64,6 +64,8 @@
 .filter-btn:hover{border-color:var(--amber);color:var(--amber);}
 .filter-btn[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:var(--onaccent);}
 .filter-count{font-size:13px;color:var(--muted);margin:8px 0 0;}
+.filter-empty{font-size:14px;color:var(--muted);margin:0;max-width:60ch;}
+.filter-empty[hidden]{display:none;}
 @media (max-width:900px){.tut-layout{grid-template-columns:1fr;}.tut-layout .tool-grid,.filter-side{grid-column:auto;grid-row:auto;}.filter-side{position:static;}.filter-row{flex-direction:row;flex-wrap:wrap;}}
 </style>
 </head>
@@ -208,6 +210,7 @@
       <div class="cta-row"><a class="btn" href="efectos-clave-sin-comprar-nada/">Leer tutorial</a></div>
     </div>
     </div>
+    <p class="filter-empty" hidden>No hay tutoriales con esta etiqueta.</p>
   </div>
 </main>
 
@@ -262,10 +265,12 @@
       var btns = Array.prototype.slice.call(row.querySelectorAll('[data-filter]'));
       var cards = Array.prototype.slice.call(document.querySelectorAll('.tool-card'));
       var count = document.querySelector('.filter-count');
+      var empty = document.querySelector('.filter-empty');
       function updateCount(){
         if (!count) return;
         var n = cards.filter(function(c){ return !c.hidden; }).length;
         count.textContent = n + ' tutoriales';
+        if (empty) empty.hidden = n !== 0;
       }
       row.addEventListener('click', function(e){
         var btn = e.target.closest('[data-filter]');

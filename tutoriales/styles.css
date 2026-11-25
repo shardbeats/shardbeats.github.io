@@ -137,7 +137,7 @@ tr:hover td { background: rgba(245, 166, 35, .04); }
   background: rgba(245, 166, 35, .15); color: var(--amber);
 }
 
-footer { padding: 36px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; text-align: center; }
+footer { padding: 36px 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; text-align: center; }
 footer a { color: var(--amber); }
 
     /* CONSENT BANNER */

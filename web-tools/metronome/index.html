@@ -413,7 +413,8 @@
   });
 
   document.addEventListener('keydown', function (e) {
-    if (e.target.matches('input, select, textarea')) return;
+    // Los botones gestionan Space/Enter de forma nativa (el punto cambia su propio estado); los atajos de transporte solo actúan con el foco fuera de ellos.
+    if (e.target.matches('input, select, textarea, button')) return;
     if (e.code === 'Space') { e.preventDefault(); timer ? stop() : start(); }
     else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { e.preventDefault(); setBpm(+bpmSlider.value + (e.shiftKey ? 10 : 1)); }
     else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { e.preventDefault(); setBpm(+bpmSlider.value - (e.shiftKey ? 10 : 1)); }

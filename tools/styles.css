@@ -87,7 +87,7 @@ nav,section,footer{position:relative;z-index:1;}
     .feature h3{font-size:16px;margin-bottom:6px;}
     .feature p{color:var(--muted);font-size:14px;}
 
-    footer{padding:40px 0;border-top:1px solid var(--border);color:var(--muted);font-size:14px;text-align:center;}
+    footer{padding:40px 20px;border-top:1px solid var(--border);color:var(--muted);font-size:14px;text-align:center;}
     footer a{color:var(--amber);}
     footer p{margin:4px 0;}
 

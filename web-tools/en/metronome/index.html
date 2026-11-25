@@ -411,7 +411,8 @@
   });
 
   document.addEventListener('keydown', function (e) {
-    if (e.target.matches('input, select, textarea')) return;
+    // Buttons handle Space/Enter natively (the dot toggles its own state); transport shortcuts only apply when focus is elsewhere.
+    if (e.target.matches('input, select, textarea, button')) return;
     if (e.code === 'Space') { e.preventDefault(); timer ? stop() : start(); }
     else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { e.preventDefault(); setBpm(+bpmSlider.value + (e.shiftKey ? 10 : 1)); }
     else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { e.preventDefault(); setBpm(+bpmSlider.value - (e.shiftKey ? 10 : 1)); }
