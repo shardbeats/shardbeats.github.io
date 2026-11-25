@@ -9,9 +9,10 @@ Convertir la BIBLIOTECA privada en 7 páginas públicas que rankeen keywords fá
 ## Goals
 - 7 pilares ES+EN (14 páginas) de 550-700 palabras, texto-only sin depender de videos de YouTube.
 - Cada pilar = 1 keyword principal + 2-3 secundarias, 1 receta accionable con tus settings verificados, CTA a pack y/o herramienta TRAKK.
-- Hub nuevo `/guias/` + `/guias/en/` con 7 cards, enlazado desde `/tutoriales/`.
+- Las 7 páginas viven en `/tutoriales/` (igual que las guías con video): `/tutoriales/<slug>/` + `/tutoriales/en/<slug>/`. Sin sección nueva.
+- Índice `/tutoriales/` + `/en/` con filtro por etiquetas: selector a la derecha (píldoras o dropdown) que filtra cards por tema sin recargar (JS mínimo, data-tags por card). Las 8 guías con video existentes reciben etiqueta `Video` + su tema; los pilares llevan `Receta` + su tema.
 - Schema HowTo (5 pasos) + FAQ (3) por página, sin VideoObject (no hay video base; evita `uploadDate` inventados).
-- Sitemap: 7 ES (weekly 0.8) + 7 EN (monthly 0.7) + 2 hubs.
+- Sitemap raíz: 7 ES (weekly 0.8) + 7 EN (monthly 0.7). Sin hubs nuevos (decisión tuya: todo en `/tutoriales/`).
 
 ## Non-goals
 - No publicar fichas tal cual ni transcripciones (ni KXVI, ni Navie D, ni Illfinite, ni PDFs).
@@ -50,17 +51,19 @@ Fuente = solo insumo privado de síntesis; en público NO se cita ni se nombra a
 Keywords ejemplo (ES principal / EN espejo): "progresiones boombap fáciles / easy boombap chord progressions", "808 que pega / punchy 808", "chops limpios sampling / clean sample chops", "mezcla por familia home studio / mix by instrument family", "workflow fl studio boombap / fl studio boombap workflow", "exportar beats para vender / export beats to sell", "efectos fl studio stock / fl studio stock effects".
 
 ## Decidido (tuyo + mío)
-- Enfoque B, 7 pilares, texto-only, ES+EN, hub `/guias/` separado de `/tutoriales/` (no diluir la promesa de video).
+- Enfoque B, 7 pilares, texto-only, ES+EN, todo dentro de `/tutoriales/` (tu decisión: sin sección `/guias/`; filtro por etiquetas en el índice en su lugar).
 - Reescritura total: sin etiquetas de fuente ([KXVI], [ND]…), sin nombres de terceros como autoridad, sin datos `(?)`.
 - Sin VideoObject; HowTo + FAQ sí. CTA siempre a pack y/o TRAKK, nunca a comprar plugins.
 - Recetas verificadas: yo extraigo 7 fichas de receta de la BIBLIOTECA (solo valores verificados de tu stock: 06, 12, 15) y tú las validas antes de construir; los implementadores trabajan solo desde esos briefs, nunca leen la BIBLIOTECA.
 - URLs TRAKK exactas (verificadas en repo): ES `../../tools/trakkconverter/`, `../../tools/trakkname/`, `../../tools/trakkout/`, `../../tools/` (hub); EN `../../../tools/en/trakkconverter/` etc. Mapeo: pilar 3→trakkconverter, pilar 6→trakkname+trakkconverter, pilares 4/5/7→hub TRAKK, pilar 1→trakkname.
-- `/guias/` vive en este repo y se registra en el `sitemap.xml` raíz (igual que `/tutoriales/`); los sitemaps de `tools/` y `landing/` no se tocan.
-- EN: mismo patrón que lotes 1-4 — traducción directa del implementador, mismos slugs bajo `/guias/en/`, hreflang recíproco.
-- Frontera anti-canibalización (propuesta pendiente de tu OK): `/tutoriales/` = guías con video (intención "ver cómo se hace"); `/guias/` = recetas de método en texto (intención "receta rápida / settings"). Mismo tema, ángulo y keyword distintos; cross-link mutuo con anchor diferenciador.
+- Mapeo packs aprobado por ti: progresiones→Timeless Boombap 2 (MIDI), drums/808→Timeless Boombap 3 o Lo-Fi Drum Kit, sampling→pack gratis `/landing/`, mezcla→stems/packs BeatStars, workflow→solo TRAKK, export→TRAKKNAME (+packs), efectos→solo TRAKK.
+- `/tutoriales/` nuevas páginas se registran en el `sitemap.xml` raíz (igual que las guías existentes).
+- EN: mismo patrón que lotes 1-4 — traducción directa del implementador, mismos slugs bajo `/tutoriales/en/`, hreflang recíproco.
+- Frontera anti-canibalización (tu decisión): sin separar secciones; las cards se distinguen por etiqueta (`Video` vs `Receta`) + tema, y cada pilar apunta a keyword/ángulo de receta distintos de la guía con video correspondiente, con cross-link mutuo.
 
 ## Queda al builder
 - Titles exactos ≤60 chars, meta descriptions, H2s y FAQs finales.
-- Orden de las 7 cards y copy de teasers del hub.
-- `changefreq/priority` exactos y cableado del cross-link en `/tutoriales/`.
+- Orden de las 15 cards y copy de teasers del índice.
+- Taxonomía final de etiquetas (propuesta: Acordes, Drums/808, Sampling, Mezcla, Workflow, Vender, Efectos + tipo Video/Receta) y JS mínimo del filtro (data-tags, sin recarga, accesible por teclado).
+- `changefreq/priority` exactos de las 14 URLs nuevas.
 - Og-image por pilar (genérica del sitio o una por cluster).
