@@ -570,6 +570,7 @@ UI = {
         "video_heading": "Míralo funcionando",
         "video_play": "Reproducir vídeo:",
         "video_watch": "Verlo en YouTube",
+        "skip_link": "Saltar al contenido",
     },
     "en": {
         "nav_tools": "Tools",
@@ -607,6 +608,7 @@ UI = {
         "video_heading": "See it working",
         "video_play": "Play video:",
         "video_watch": "Watch on YouTube",
+        "skip_link": "Skip to content",
     },
 }
 
@@ -684,6 +686,7 @@ PAGE = Template("""<!doctype html>
   <link rel="stylesheet" href="${root_rel}styles.css" />
 </head>
 <body>
+<a class="skip" href="#main-content">$skip_link</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMVJZ8VL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
@@ -704,7 +707,7 @@ PAGE = Template("""<!doctype html>
   </nav>
   </header>
 
-  <main>
+  <main id="main-content">
   <section class="section tool-hero">
     <div class="container">
       <nav class="crumbs" aria-label="Breadcrumb">

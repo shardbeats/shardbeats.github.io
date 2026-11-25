@@ -30,19 +30,22 @@ nav,section,footer{position:relative;z-index:1;}
     }
 
     /* HERO */
-    .hero{padding:90px 0 60px;position:relative;overflow:hidden;text-align:center;}
+    .hero{padding:90px 0 60px;position:relative;overflow:hidden;text-align:left;}
     .hero::before{content:"";position:absolute;inset:-20% -10% auto -10%;height:600px;background:radial-gradient(ellipse at center,rgba(245,166,35,.18) 0%,transparent 60%);pointer-events:none;animation:pulse 6s ease-in-out infinite;}
     .hero::after{content:"";position:absolute;inset:auto -10% -20% -10%;height:400px;background:radial-gradient(ellipse at center,rgba(124,58,237,.12) 0%,transparent 60%);pointer-events:none;}
     @keyframes pulse{0%,100%{opacity:.7;transform:scale(1);}50%{opacity:1;transform:scale(1.08);}}
     .hero h1{font-size:clamp(36px,7vw,68px);line-height:1.05;font-weight:800;letter-spacing:-.03em;margin:0;position:relative;}
     .hero h1 .accent{color:var(--amber);text-shadow:0 0 30px rgba(245,166,35,.4);}
-    .hero p{color:var(--muted);font-size:19px;margin:18px auto 0;max-width:680px;position:relative;}
-    .hero .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px;position:relative;}
+    .hero p{color:var(--muted);font-size:19px;margin:18px 0 0;max-width:680px;position:relative;}
+    .hero .cta-row{display:flex;gap:14px;justify-content:flex-start;flex-wrap:wrap;margin-top:28px;position:relative;}
     .cta{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:var(--onaccent);font-weight:700;padding:15px 28px;border-radius:999px;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;box-shadow:0 8px 24px rgba(245,166,35,.25);}
     .cta:hover{background:var(--amber2);transform:translateY(-2px);box-shadow:0 12px 32px rgba(245,166,35,.4);text-decoration:none;}
     .cta-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text);font-weight:700;padding:14px 26px;border-radius:999px;border:1px solid var(--border);transition:transform .15s ease,border-color .15s ease,color .15s ease;}
     .cta-outline:hover{border-color:var(--amber);color:var(--amber);transform:translateY(-2px);text-decoration:none;}
     .eyebrow{color:var(--amber);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.14em;margin-bottom:14px;}
+    .section-head{border-left:3px solid var(--amber);padding-left:16px;margin:0 0 20px;}
+    .text-center{text-align:center;}
+    .hero .lead{margin-left:0;margin-right:0;}
 
     /* SECTIONS */
     .section{padding:70px 0;position:relative;}
