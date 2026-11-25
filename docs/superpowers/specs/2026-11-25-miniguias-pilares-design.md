@@ -53,6 +53,11 @@ Keywords ejemplo (ES principal / EN espejo): "progresiones boombap fáciles / ea
 - Enfoque B, 7 pilares, texto-only, ES+EN, hub `/guias/` separado de `/tutoriales/` (no diluir la promesa de video).
 - Reescritura total: sin etiquetas de fuente ([KXVI], [ND]…), sin nombres de terceros como autoridad, sin datos `(?)`.
 - Sin VideoObject; HowTo + FAQ sí. CTA siempre a pack y/o TRAKK, nunca a comprar plugins.
+- Recetas verificadas: yo extraigo 7 fichas de receta de la BIBLIOTECA (solo valores verificados de tu stock: 06, 12, 15) y tú las validas antes de construir; los implementadores trabajan solo desde esos briefs, nunca leen la BIBLIOTECA.
+- URLs TRAKK exactas (verificadas en repo): ES `../../tools/trakkconverter/`, `../../tools/trakkname/`, `../../tools/trakkout/`, `../../tools/` (hub); EN `../../../tools/en/trakkconverter/` etc. Mapeo: pilar 3→trakkconverter, pilar 6→trakkname+trakkconverter, pilares 4/5/7→hub TRAKK, pilar 1→trakkname.
+- `/guias/` vive en este repo y se registra en el `sitemap.xml` raíz (igual que `/tutoriales/`); los sitemaps de `tools/` y `landing/` no se tocan.
+- EN: mismo patrón que lotes 1-4 — traducción directa del implementador, mismos slugs bajo `/guias/en/`, hreflang recíproco.
+- Frontera anti-canibalización (propuesta pendiente de tu OK): `/tutoriales/` = guías con video (intención "ver cómo se hace"); `/guias/` = recetas de método en texto (intención "receta rápida / settings"). Mismo tema, ángulo y keyword distintos; cross-link mutuo con anchor diferenciador.
 
 ## Queda al builder
 - Titles exactos ≤60 chars, meta descriptions, H2s y FAQs finales.
