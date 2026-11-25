@@ -55,6 +55,12 @@
 <link rel="icon" type="image/png" sizes="64x64" href="../../favicon-64.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
 <link rel="stylesheet" href="../styles.css" />
+<style>
+.filter-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;margin:4px 0 0;}
+.filter-btn{font:inherit;font-size:13px;font-weight:700;padding:7px 16px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;}
+.filter-btn:hover{border-color:var(--amber);color:var(--amber);}
+.filter-btn[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:var(--onaccent);}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -79,54 +85,117 @@
     <p class="lead">Step-by-step guides on FL Studio, mixing and SP-404.</p>
   </section>
 
+  <div class="filter-row" role="group" aria-label="Filter tutorials by tag">
+    <button class="filter-btn" type="button" data-filter="todo" aria-pressed="true">All</button>
+    <button class="filter-btn" type="button" data-filter="receta" aria-pressed="false">Recipe</button>
+    <button class="filter-btn" type="button" data-filter="video" aria-pressed="false">Video</button>
+    <button class="filter-btn" type="button" data-filter="acordes" aria-pressed="false">Chords</button>
+    <button class="filter-btn" type="button" data-filter="drums-808" aria-pressed="false">Drums &amp; 808</button>
+    <button class="filter-btn" type="button" data-filter="sampling" aria-pressed="false">Sampling</button>
+    <button class="filter-btn" type="button" data-filter="mezcla" aria-pressed="false">Mixing</button>
+    <button class="filter-btn" type="button" data-filter="workflow" aria-pressed="false">Workflow</button>
+    <button class="filter-btn" type="button" data-filter="vender" aria-pressed="false">Sell</button>
+    <button class="filter-btn" type="button" data-filter="efectos" aria-pressed="false">Effects</button>
+  </div>
+
   <div class="tool-grid">
-    <div class="tool-card">
+    <div class="tool-card" data-tags="video workflow">
       <span class="tag">Available</span>
+      <span class="tag">Video</span>
       <h2>FL Studio with AI</h2>
       <p>Use stems and AI to speed up your FL Studio workflow: separate, sample and arrange faster.</p>
       <div class="cta-row"><a class="btn" href="fl-studio-ia/">Read tutorial</a></div>
     </div>
-    <div class="tool-card">
+    <div class="tool-card" data-tags="video acordes">
       <span class="tag">Available</span>
+      <span class="tag">Video</span>
       <h2>Beat structure basics</h2>
       <p>Intro, verse, hook and outro: how to build a beat arrangement that never bores.</p>
       <div class="cta-row"><a class="btn" href="partes-de-un-beat/">Read tutorial</a></div>
     </div>
-    <div class="tool-card">
+    <div class="tool-card" data-tags="video drums-808">
       <span class="tag">Available</span>
+      <span class="tag">Video</span>
       <h2>Bass lines in FL Studio</h2>
       <p>Make bass lines in FL Studio: root note, 808 locked to the kick, slides and gentle saturation.</p>
       <div class="cta-row"><a class="btn" href="bass-lines-fl-studio/">Read tutorial</a></div>
     </div>
-    <div class="tool-card">
+    <div class="tool-card" data-tags="video sampling">
       <span class="tag">Available</span>
+      <span class="tag">Video</span>
       <h2>SP-404 MK2: prepare your samples</h2>
       <p>Prepare your samples for the Roland SP-404 MK2: correct WAV format, ROLAND/SP404 folders on the SD and batch conversion. Get your samples ready to import without errors.</p>
       <div class="cta-row"><a class="btn" href="sp-404-mk2-preparar-samples/">Read tutorial</a></div>
     </div>
-    <div class="tool-card">
+    <div class="tool-card" data-tags="video vender">
       <span class="tag">Available</span>
+      <span class="tag">Video</span>
       <h2>How to upload beats to YouTube</h2>
       <p>Export your WAV, build a 1080p MP4 with TRAKKOUT from audio and artwork and upload it to YouTube with optimized metadata.</p>
       <div class="cta-row"><a class="btn" href="subir-beats-a-youtube/">Read tutorial</a></div>
     </div>
-    <div class="tool-card">
+    <div class="tool-card" data-tags="video mezcla">
       <span class="tag">Available</span>
+      <span class="tag">Video</span>
       <h2>Home Studio mixes</h2>
       <p>Gain staging, corrective EQ, vocal compression, panning and A/B referencing to make your home mixes sound pro without new gear.</p>
       <div class="cta-row"><a class="btn" href="mezclas-home-studio/">Read tutorial</a></div>
     </div>
-    <div class="tool-card">
+    <div class="tool-card" data-tags="video drums-808">
       <span class="tag">Available</span>
+      <span class="tag">Video</span>
       <h2>Lo-fi beats with free drumkit</h2>
       <p>Make lo-fi beats with a free drumkit: vinyl crackle, gritty drums, chops and warm texture in minutes.</p>
       <div class="cta-row"><a class="btn" href="beats-lofi-drumkit/">Read tutorial</a></div>
     </div>
-    <div class="tool-card">
+    <div class="tool-card" data-tags="video efectos">
       <span class="tag">Available</span>
+      <span class="tag">Video</span>
       <h2>FL Studio effects</h2>
       <p>Reverb and delay, distortion, EQ and automation to add space and character to your beats in FL Studio.</p>
       <div class="cta-row"><a class="btn" href="efectos-fl-studio/">Read tutorial</a></div>
+    </div>
+    <div class="tool-card" data-tags="receta acordes">
+      <span class="tag">Recipe</span>
+      <h2>Easy boombap chord progressions</h2>
+      <p>Easy boombap progressions with 3-note chords and MIDI files: i–VI–III–VII recipes ready to copy in FL Studio.</p>
+      <div class="cta-row"><a class="btn" href="progresiones-boombap-faciles/">Read tutorial</a></div>
+    </div>
+    <div class="tool-card" data-tags="receta drums-808">
+      <span class="tag">Recipe</span>
+      <h2>Punchy drums and 808</h2>
+      <p>Upfront kick, tuned 808 with slides and a saturation chain for low end that hits on any speaker.</p>
+      <div class="cta-row"><a class="btn" href="drums-808-que-pegan/">Read tutorial</a></div>
+    </div>
+    <div class="tool-card" data-tags="receta sampling">
+      <span class="tag">Recipe</span>
+      <h2>Clean sampling and chops</h2>
+      <p>Slice, tune and level your chops without clicks or mud for pro-sounding loops.</p>
+      <div class="cta-row"><a class="btn" href="sampling-chops-limpios/">Read tutorial</a></div>
+    </div>
+    <div class="tool-card" data-tags="receta mezcla">
+      <span class="tag">Recipe</span>
+      <h2>Mix by instrument family</h2>
+      <p>Levels, EQ and compression per group (drums, bass, sample, vocals) for a clear home-studio mix with no new gear.</p>
+      <div class="cta-row"><a class="btn" href="mezcla-home-studio-por-familia/">Read tutorial</a></div>
+    </div>
+    <div class="tool-card" data-tags="receta workflow">
+      <span class="tag">Recipe</span>
+      <h2>Boombap FL Studio workflow</h2>
+      <p>Template, shortcuts and a 30-minute routine to finish beats with a vintage sound in FL Studio.</p>
+      <div class="cta-row"><a class="btn" href="workflow-fl-studio-vintage-boombap/">Read tutorial</a></div>
+    </div>
+    <div class="tool-card" data-tags="receta vender">
+      <span class="tag">Recipe</span>
+      <h2>Export beats and kits to sell</h2>
+      <p>WAV, stems and kit formats ready for stores and licenses: export without errors and sell faster.</p>
+      <div class="cta-row"><a class="btn" href="exportar-vender-beats-packs/">Read tutorial</a></div>
+    </div>
+    <div class="tool-card" data-tags="receta efectos">
+      <span class="tag">Recipe</span>
+      <h2>Key effects with stock plugins</h2>
+      <p>Reverb, delay, saturation and automation using only factory plugins to give your beats character.</p>
+      <div class="cta-row"><a class="btn" href="efectos-clave-sin-comprar-nada/">Read tutorial</a></div>
     </div>
   </div>
 </main>
@@ -171,6 +240,24 @@
           e.preventDefault();
           banner.hidden = true;
           banner.hidden = false;
+        });
+      });
+    })();
+  </script>
+  <script>
+    (function(){
+      var row = document.querySelector('.filter-row');
+      if (!row) return;
+      var btns = Array.prototype.slice.call(row.querySelectorAll('[data-filter]'));
+      var cards = Array.prototype.slice.call(document.querySelectorAll('.tool-card'));
+      row.addEventListener('click', function(e){
+        var btn = e.target.closest('[data-filter]');
+        if (!btn) return;
+        var f = btn.getAttribute('data-filter');
+        btns.forEach(function(b){ b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+        cards.forEach(function(c){
+          var tags = (c.getAttribute('data-tags') || '').split(' ');
+          c.hidden = !(f === 'todo' || tags.indexOf(f) > -1);
         });
       });
     })();
