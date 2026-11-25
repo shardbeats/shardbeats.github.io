@@ -535,11 +535,12 @@ TOOLS = [
 
 UI = {
     "es": {
-        "nav_tools": "Herramientas",
-        "nav_guide": "Guía",
-        "nav_kits": "Sound Kits",
-        "nav_faq": "FAQ",
-        "nav_github": "GitHub",
+        "nav_suite": "TRAKK SUITE",
+        "nav_tuts": "Tutoriales",
+        "nav_web": "Web tools",
+        "nav_pack": "Pack gratis",
+        "nav_sub0": "Herramientas",
+        "nav_sub1": "Guía",
         "lang_switch": "EN",
         "crumb_home": "Inicio",
         "crumb_tools": "Herramientas",
@@ -573,11 +574,12 @@ UI = {
         "skip_link": "Saltar al contenido",
     },
     "en": {
-        "nav_tools": "Tools",
-        "nav_guide": "Guide",
-        "nav_kits": "Sound Kits",
-        "nav_faq": "FAQ",
-        "nav_github": "GitHub",
+        "nav_suite": "TRAKK SUITE",
+        "nav_tuts": "Tutorials",
+        "nav_web": "Web tools",
+        "nav_pack": "Free pack",
+        "nav_sub0": "Tools",
+        "nav_sub1": "Guide",
         "lang_switch": "ES",
         "crumb_home": "Home",
         "crumb_tools": "Tools",
@@ -692,19 +694,20 @@ PAGE = Template("""<!doctype html>
 <!-- End Google Tag Manager (noscript) -->
   <div id="bg3d" aria-hidden="true"></div>
   <header>
-  <nav aria-label="$navlabel">
-    <div class="container">
-      <div class="logo"><a href="$home_es" class="logo-link"><img src="${root_rel}logo-120.png" width="40" height="40" alt="Shard Beats logo" />Shard <span>Beats</span></a></div>
-      <div class="nav-links">
-        <a href="$home_es#tools">$nav_tools</a>
-        <a href="$home_es#guia">$nav_guide</a>
-        <a href="$home_es#soundkits">$nav_kits</a>
-        <a href="$home_es#faq">$nav_faq</a>
-        <a href="$alt_other" hreflang="$otherlang" lang="$otherlang2">$lang_switch</a>
-        <a href="https://github.com/shardbeats" target="_blank" rel="noopener">$nav_github</a>
-      </div>
+<nav aria-label="$navlabel">
+  <div class="container">
+    <a class="logo" href="$site_home">Shard<span>beats</span></a>
+    <div class="nav-links">
+      <a href="$suite_home" aria-current="page">TRAKK SUITE</a>
+      <a href="$tuts_home">$nav_tuts</a>
+      <a href="$web_home">$nav_web</a>
+      <a href="$pack_home">$nav_pack</a>
+      <a href="https://github.com/shardbeats" target="_blank" rel="noopener">GitHub</a>
+      <a href="$alt_other" hreflang="$otherlang" lang="$otherlang2">$lang_switch</a>
     </div>
-  </nav>
+  </div>
+</nav>
+$subnav
   </header>
 
   <main id="main-content">
@@ -973,6 +976,22 @@ def build(tool, lang):
         home_es = '../../'
         alt_other = '../../' + tool['slug'] + '/'
 
+    site = root_rel + '../'
+    site_home = site + ('en/' if lang == 'en' else '')
+    suite_home = '../'
+    tuts_home = site + ('tutoriales/en/' if lang == 'en' else 'tutoriales/')
+    web_home = site + ('web-tools/en/' if lang == 'en' else 'web-tools/')
+    pack_home = site + ('landing/en/' if lang == 'en' else 'landing/')
+    guide_anchor = 'guide' if lang == 'en' else 'guia'
+    subnav = (
+        '<div class="subnav container">\n'
+        '  <a class="pill" href="../#tools">%s</a>\n'
+        '  <a class="pill" href="../#%s">%s</a>\n'
+        '  <a class="pill" href="../#soundkits">Sound Kits</a>\n'
+        '  <a class="pill" href="../#faq">FAQ</a>\n'
+        '</div>'
+    ) % (ui['nav_sub0'], guide_anchor, ui['nav_sub1'])
+
     home_pack = 'https://shardbeats.github.io/landing/' + ('' if lang == 'es' else 'en/')
     canonical = BASE_URL + ('' if lang == 'es' else 'en/') + tool['slug'] + '/'
     alt_es = BASE_URL + tool['slug'] + '/'
@@ -1117,6 +1136,12 @@ def build(tool, lang):
         lead=esc(t['lead']),
         root_rel=root_rel,
         home_es=home_es,
+        site_home=site_home,
+        suite_home=suite_home,
+        tuts_home=tuts_home,
+        web_home=web_home,
+        pack_home=pack_home,
+        subnav=subnav,
         home_pack=home_pack,
         og_image=og_image,
         oglocale='es_ES' if lang == 'es' else 'en_US',

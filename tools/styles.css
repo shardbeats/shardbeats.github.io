@@ -16,14 +16,21 @@
     nav{position:sticky;top:0;z-index:50;background:rgba(21,22,23,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
     nav .container{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;}
     .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;} .logo span{color:var(--amber);}
+    a.logo{color:var(--text);text-decoration:none;}
     .logo img{width:40px;height:40px;border-radius:50%;background:var(--bg2);object-fit:contain;padding:2px;border:1px solid var(--border);}
 /* ===== Fondo 3D sutil (Three.js) ===== */
 #bg3d{position:fixed;inset:0;z-index:0;pointer-events:none;}
 #bg3d canvas{display:block;}
 nav,section,footer{position:relative;z-index:1;}
-    .nav-links{display:flex;gap:20px;font-size:14px;align-items:center;}
-    .nav-links a{color:var(--text);white-space:nowrap;}
+    .nav-links{display:flex;gap:20px;font-size:14px;align-items:center;flex-wrap:wrap;row-gap:8px;}
+    .nav-links a{color:var(--text);white-space:nowrap;padding:12px 4px;}
     .nav-links a:hover{color:var(--amber);}
+    .nav-links a[aria-current="page"]{color:var(--amber);font-weight:700;}
+    @media (max-width:480px){.nav-links{gap:12px;}}
+    /* Subnav tools: accesos rapidos a secciones, pills a la derecha como los tags de tutoriales */
+    .subnav{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:8px;padding-top:12px;padding-bottom:4px;}
+    .pill{font-size:13px;font-weight:700;padding:7px 16px;min-height:44px;display:inline-flex;align-items:center;border-radius:999px;border:1px solid var(--border);color:var(--text);text-decoration:none;}
+    .pill:hover{border-color:var(--amber);color:var(--amber);}
     @media (max-width:760px){
       nav .container{flex-wrap:wrap;gap:10px;padding:12px 16px;}
       .nav-links{gap:14px;font-size:13px;flex-wrap:wrap;justify-content:flex-start;}
