@@ -57,14 +57,14 @@
 <link rel="stylesheet" href="../styles.css" />
 <style>
 .tut-layout{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:24px;align-items:start;margin:28px 0 48px;}
-.tut-layout .tool-grid{margin:0;}
-.filter-side{position:sticky;top:16px;min-width:0;}
+.tut-layout .tool-grid{grid-column:1;grid-row:1;margin:0;}
+.filter-side{grid-column:2;grid-row:1;position:sticky;top:16px;min-width:0;}
 .filter-title{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 8px;}
 .filter-row{display:flex;flex-direction:column;align-items:stretch;gap:8px;margin:0;}
 .filter-btn{font:inherit;font-size:13px;font-weight:700;padding:7px 16px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;text-align:left;}
 .filter-btn:hover{border-color:var(--amber);color:var(--amber);}
 .filter-btn[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:var(--onaccent);}
-@media (max-width:900px){.tut-layout{grid-template-columns:1fr;}.filter-side{position:static;}.filter-row{flex-direction:row;flex-wrap:wrap;}}
+@media (max-width:900px){.tut-layout{grid-template-columns:1fr;}.tut-layout .tool-grid,.filter-side{grid-column:auto;grid-row:auto;}.filter-side{position:static;}.filter-row{flex-direction:row;flex-wrap:wrap;}}
 </style>
 </head>
 <body>
