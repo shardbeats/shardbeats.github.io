@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta name="p:domain_verify" content="b057c8e43a06a802d24c1c27cfb07d3d"/>
+<meta name="google-site-verification" content="VdLDbokxShSCLe5d8as7TuPpIL4R1LN5wWVfc7z7G2c"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sampling y chops limpios | ShardBeats</title>
+<meta name="description" content="Sampling y chops limpios en 5 pasos: sección limpia al tempo, chops en cambios de progresión, re-pitch de single-notes, cortes escondidos y bounce DRY+WET." />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta name="theme-color" content="#151617" />
+<link rel="canonical" href="https://shardbeats.github.io/tutoriales/sampling-chops-limpios/" />
+<link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tutoriales/sampling-chops-limpios/" />
+<link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tutoriales/en/sampling-chops-limpios/" />
+<link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tutoriales/sampling-chops-limpios/" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="ShardBeats" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:url" content="https://shardbeats.github.io/tutoriales/sampling-chops-limpios/" />
+<meta property="og:title" content="Sampling y chops limpios | ShardBeats" />
+<meta property="og:description" content="Sección limpia, chops en cambios de progresión, re-pitch de single-notes y bounce DRY+WET. Guía gratis paso a paso." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Sampling y chops limpios | ShardBeats" />
+<meta name="twitter:description" content="Sección limpia, chops en cambios de progresión, re-pitch de single-notes y bounce DRY+WET." />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?'&l='+l:'';j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-NMVJZ8VL");</script>
+<!-- End Google Tag Manager -->
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'url_passthrough', true);
+    gtag('set', 'ads_data_redaction', true);
+    try {
+      if (localStorage.getItem('sb-consent') === 'granted') {
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          analytics_storage: 'granted'
+        });
+      }
+    } catch (e) {}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Sampling y chops limpios en 5 pasos",
+    "description": "Cómo lograr sampling y chops limpios: sección limpia al tempo, chops en cambios de progresión, re-pitch de single-notes, cortes escondidos y bounce DRY más WET.",
+    "inLanguage": "es",
+    "totalTime": "PT30M",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Elige una sección limpia del tema a tempo hip-hop", "text": "Prefiere samples sparse sobre densos: si no aíslas nada útil, cambia de sección en vez de pelear con la mezcla original." },
+      { "@type": "HowToStep", "position": 2, "name": "Chopea en cambios de progresión, no en cada transient", "text": "Corta donde cambian las notas bajas, no en cada transient de drums: solo-transients da ritmo ok pero progresión caótica. Main primero, luego chops chicos que lo sigan." },
+      { "@type": "HowToStep", "position": 3, "name": "Re-pitchea con single-notes y stretch por chop", "text": "Re-pitchea con single-notes, una nota, no acordes enteros; duplica la nota a otros pitches para frases largas. Stretch distinto por chop: largos para melodía, espacios tight para ritmo." },
+      { "@type": "HowToStep", "position": 4, "name": "Esconde los cortes y restaura el stereo", "text": "Esconde los cortes con cola de reverb en el corte abrupto, o con attack y release, y restaura el stereo angosto con chorus más tape saturation leve." },
+      { "@type": "HowToStep", "position": 5, "name": "Pásalo por Slicex en Resample y bota DRY más WET", "text": "Slicex, chop, modo Resample para picheo estilo MPC60, con segunda pasada opcional por SP-404 Vinyl. Deja 2 a 4 compases con cola y bota DRY más WET con naming BPM_Key." }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "es",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Micro-chops sí o no?", "acceptedAnswer": { "@type": "Answer", "text": "No: loop sin rumbo y aburrido. Chop en cambios de progresión." } },
+      { "@type": "Question", "name": "¿Cómo evito que suene caótico?", "acceptedAnswer": { "@type": "Answer", "text": "Diagnostica con stem-split, drums contra música, y chopea lo musical, no lo rítmico." } },
+      { "@type": "Question", "name": "¿Loop entero o chops?", "acceptedAnswer": { "@type": "Answer", "text": "Empieza loop, 2 bars más drums más EQ; sube a chops, 4 mains más 2 extra en el compás 4, cuando domines el loop." } }
+    ]
+  }
+  </script>
+<link rel="icon" type="image/png" sizes="64x64" href="../../favicon-64.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMVJZ8VL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav aria-label="Principal">
+  <div class="container">
+    <a class="logo" href="../../" style="text-decoration:none">Shard <span>Beats</span></a>
+    <div class="nav-links">
+      <a href="../../tools/">TRAKK SUITE</a>
+      <a href="../../landing/">Pack gratis</a>
+      <a href="../">Tutoriales</a>
+      <a href="../en/sampling-chops-limpios/" hreflang="en" lang="en">EN</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <p class="crumb" style="margin-top:18px;font-size:14px;"><a href="../">← Tutoriales</a></p>
+  <section class="hero" style="padding-top:24px;">
+    <div class="eyebrow">ShardBeats · Tutoriales · Sampling y chops</div>
+    <h1>Sampling y chops limpios en 5 pasos</h1>
+    <p class="lead">Sampling y chops limpios que suenan a disco y no a parche: de la sección correcta al bounce final en 5 pasos.</p>
+  </section>
+
+  <div class="prose">
+    <p>Esta guía de <strong>sampling y chops limpios</strong> es para beatmakers que cortan un sample y el resultado suena embarrado o caótico: el loop no encaja al tempo, los chops pelean entre sí y cada corte se oye como un parche pegado a la fuerza. El problema casi nunca es el sample, es el método: elegir una sección limpia al tempo correcto, chopear donde cambia la progresión en vez de en cada golpe, re-pitchear con notas sueltas, esconder los cortes y pasar todo por tu cadena antes de botar. Cinco pasos con valores exactos y sin teoría de más.</p>
+
+    <h2>Paso 1: elige una sección limpia del tema a tempo hip-hop</h2>
+    <p>Elige una sección limpia del tema ya a tempo hip-hop: prefiere samples sparse sobre densos, con pocos elementos sonando a la vez. Un pasaje abierto con un solo instrumento te da chops que respiran; una mezcla llena de cuerdas, voces y percusión te obliga a pelear con frecuencias que no puedes separar. Si no aíslas nada útil después de probar dos o tres secciones, cambia de sección en vez de forzar el sample. Y si dudas entre lo musical y lo rítmico, diagnostica con un stem-split de drums contra música para oír qué parte realmente vale la pena chopear.</p>
+
+    <h2>Paso 2: chopea en cambios de progresión, no en cada transient</h2>
+    <p>Chopea en cambios de progresión, en las notas bajas donde cambia el acorde, y NO en cada transient de drums. Cortar solo en transients te da ritmo correcto pero progresión caótica: cada chop empieza con golpe pero ninguno dice nada armónico, y el loop suena sin rumbo y aburrido. Marca primero el chop main, el que lleva la frase completa, y luego corta chops chicos que lo sigan como respuesta. Piensa en frases musicales, no en rejilla de batería: el oído perdona un transient movido, pero no perdona un acorde a la mitad.</p>
+
+    <h2>Paso 3: re-pitchea con single-notes y stretch distinto por chop</h2>
+    <p>Re-pitchea con single-notes, una sola nota, nunca acordes enteros: mover un acorde completo arrastra disonancias que delatan el truco al instante. Si necesitas una frase larga en otro pitch, duplica la nota a otros pitches y construye la línea nota por nota. Y aplica stretch distinto por chop según su función: chops largos y estirados para la melodía que canta encima, espacios tight y cortos para el ritmo que sostiene abajo. Esa diferencia de tratamiento es lo que separa un flip que suena tocado de uno que suena recortado.</p>
+
+    <h2>Paso 4: esconde los cortes y restaura el stereo angosto</h2>
+    <p>Esconde los cortes para que ningún chop suene a tijera: pon una cola de reverb justo en el corte abrupto, o suaviza con attack y release hasta que la transición desaparezca. Los cortes limpios también suelen dejar el stereo angosto y sin vida, así que restaura la imagen con chorus más un toque de tape saturation leve. El chorus abre los lados sin mover el centro y la cinta le devuelve el pegamento analógico que el corte digital le quitó. Escucha cada chop en solo y luego en contexto: si el oído encuentra el empalme, todavía falta reverb o falta release.</p>
+
+    <h2>Paso 5: pásalo por Slicex en Resample y bota DRY más WET</h2>
+    <p>Pásalo a tu terreno con la cadena completa: Slicex, chop, y modo Resample para el picheo estilo MPC60, donde el pitch y el tempo se mueven juntos como en la máquina clásica. Si quieres más carácter, haz una segunda pasada opcional por SP-404 Vinyl para ensuciar los bordes. Deja el arreglo en 2 a 4 compases con cola de reverb al final para que respire, y bota dos versiones, DRY y WET, con naming BPM_Key, por ejemplo 90_Cm. El DRY te salva si la mezcla cambia de rumbo; el WET documenta exactamente cómo sonaba tu idea.</p>
+
+    <h2>Sigue con stems limpios y nombra tus bounces</h2>
+    <p>Separa drums y música antes de chopear con <a href="../../tools/trakkconverter/">TRAKKCONVERTER, la herramienta gratis de TRAKK SUITE</a>. Y cuando tu flip esté listo, descarga el <a href="../../landing/">pack gratis de ShardBeats</a> para seguir practicando.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq">
+      <details><summary>¿Micro-chops sí o no?</summary><p>No: loop sin rumbo y aburrido. Chop en cambios de progresión.</p></details>
+      <details><summary>¿Cómo evito que suene caótico?</summary><p>Diagnostica con stem-split, drums contra música, y chopea lo musical, no lo rítmico.</p></details>
+      <details><summary>¿Loop entero o chops?</summary><p>Empieza loop, 2 bars más drums más EQ; sube a chops, 4 mains más 2 extra en el compás 4, cuando domines el loop.</p></details>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>Shard Btmkr (Darío García) · canal y sitio ShardBeats · La Piedad, Mich. · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">Contenido del sitio: CC BY-NC-SA 4.0</a></p>
+    <p><a href="../../tools/">TRAKK SUITE</a> · <a href="../../landing/">Pack gratis</a> · <a href="../">Tutoriales</a></p>
+  </div>
+</footer>
+
+  <div id="consent-banner" class="consent" role="dialog" aria-live="polite" aria-label="Consentimiento de cookies" hidden>
+    <p><strong>Cookies y analítica.</strong> Usamos Google Analytics para medir visitas y uso de las herramientas. Puedes aceptar o rechazar; con "Rechazar" no se guarda ninguna cookie de medición. <a href="../../tools/privacy.html">Política de privacidad</a>.</p>
+    <div class="consent-actions">
+      <button class="consent-btn ghost" type="button" data-consent="denied">Rechazar</button>
+      <button class="consent-btn" type="button" data-consent="granted">Aceptar</button>
+    </div>
+  </div>
+  <script>
+    (function(){
+      var banner = document.getElementById('consent-banner');
+      if (!banner) return;
+      var stored = null;
+      try { stored = localStorage.getItem('sb-consent'); } catch (e) {}
+      if (!stored) banner.hidden = false;
+      function apply(state) {
+        try { localStorage.setItem('sb-consent', state); } catch (e) {}
+        gtag('consent', 'update', {
+          ad_storage: state,
+          ad_user_data: state,
+          ad_personalization: state,
+          analytics_storage: state
+        });
+        banner.hidden = true;
+      }
+      banner.addEventListener('click', function(e){
+        var btn = e.target.closest('[data-consent]');
+        if (btn) apply(btn.getAttribute('data-consent'));
+      });
+      document.querySelectorAll('[data-consent-reset]').forEach(function(el){
+        el.addEventListener('click', function(e){
+          e.preventDefault();
+          banner.hidden = true;
+          banner.hidden = false;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
