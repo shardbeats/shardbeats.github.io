@@ -109,6 +109,7 @@
 </script>
 </head>
 <body>
+<a class="skip" href="#main-content">Skip to content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMVJZ8VL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
@@ -124,7 +125,7 @@
   </div>
 </nav>
 
-<main class="container">
+<main class="container" id="main-content">
   <section class="hero">
     <div class="eyebrow">ShardBeats · Web tools</div>
     <h1><span class="accent">Delay &amp; reverb</span> calculator by BPM</h1>
@@ -135,24 +136,30 @@
     <div class="bpm-row">
       <label for="bpm">Your BPM</label>
       <input type="number" id="bpm" min="40" max="240" value="120" />
-      <input type="range" id="bpmRange" min="40" max="240" value="120" aria-label="BPM" />
+      <input type="range" id="bpmRange" min="40" max="240" value="120" aria-label="BPM slider" />
     </div>
-    <p class="bpm-hint">One beat is <strong id="beatMs">500</strong> ms · One bar (4/4) is <strong id="barMs">2000</strong> ms.</p>
+    <p class="bpm-hint">One beat is <output id="beatMs" aria-live="polite">500</output> ms · One bar (4/4) is <output id="barMs" aria-live="polite">2000</output> ms.</p>
   </section>
 
   <h2>Reverb presets</h2>
   <p class="section-sub">Pre-delay + decay = total time. Add or subtract a few ms to push or drag the groove.</p>
+  <div class="table-scroll">
   <table id="reverbTable" aria-label="Reverb presets">
     <thead><tr><th>Size</th><th>Pre-delay</th><th>Decay</th><th>Total</th></tr></thead>
     <tbody></tbody>
   </table>
+  <noscript><p>Enable JavaScript to see the timings.</p></noscript>
+  </div>
 
   <h2>Delay times per note value</h2>
   <p class="section-sub">Straight, dotted (×1.5) and triplet (×⅔), with Hz equivalents for LFOs.</p>
+  <div class="table-scroll">
   <table id="delayTable" aria-label="Delay times">
     <thead><tr><th>Note</th><th>Straight</th><th>Dotted</th><th>Triplet</th></tr></thead>
     <tbody></tbody>
   </table>
+  <noscript><p>Enable JavaScript to see the timings.</p></noscript>
+  </div>
 
   <section class="prose">
     <h2>How to use these times</h2>

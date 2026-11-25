@@ -108,6 +108,7 @@
 </script>
 </head>
 <body>
+<a class="skip" href="#main-content">Saltar al contenido</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMVJZ8VL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
@@ -123,7 +124,7 @@
   </div>
 </nav>
 
-<main class="container">
+<main class="container" id="main-content">
   <section class="hero">
     <div class="eyebrow">ShardBeats · Web tools</div>
     <h1>Calculadora de <span class="accent">delay y reverb</span> por BPM</h1>
@@ -134,24 +135,30 @@
     <div class="bpm-row">
       <label for="bpm">Tu BPM</label>
       <input type="number" id="bpm" min="40" max="240" value="120" />
-      <input type="range" id="bpmRange" min="40" max="240" value="120" aria-label="BPM" />
+      <input type="range" id="bpmRange" min="40" max="240" value="120" aria-label="BPM slider" />
     </div>
-    <p class="bpm-hint">Un beat a <strong id="beatMs">500</strong> ms · Un compás (4/4) son <strong id="barMs">2000</strong> ms.</p>
+    <p class="bpm-hint">Un beat a <output id="beatMs" aria-live="polite">500</output> ms · Un compás (4/4) son <output id="barMs" aria-live="polite">2000</output> ms.</p>
   </section>
 
   <h2>Presets de reverb</h2>
   <p class="section-sub">Pre-delay + decay = tiempo total. Suma o resta unos ms para empujar o arrastrar el groove.</p>
+  <div class="table-scroll">
   <table id="reverbTable" aria-label="Presets de reverb">
     <thead><tr><th>Tamaño</th><th>Pre-delay</th><th>Decay</th><th>Total</th></tr></thead>
     <tbody></tbody>
   </table>
+  <noscript><p>Activa JavaScript para ver los tiempos.</p></noscript>
+  </div>
 
   <h2>Tiempos de delay por figura</h2>
   <p class="section-sub">Normal, con puntillo (×1.5) y tresillo (×⅔), con su equivalente en Hz para LFOs.</p>
+  <div class="table-scroll">
   <table id="delayTable" aria-label="Tiempos de delay">
     <thead><tr><th>Figura</th><th>Normal</th><th>Con puntillo</th><th>Tresillo</th></tr></thead>
     <tbody></tbody>
   </table>
+  <noscript><p>Activa JavaScript para ver los tiempos.</p></noscript>
+  </div>
 
   <section class="prose">
     <h2>Cómo usar estos tiempos</h2>

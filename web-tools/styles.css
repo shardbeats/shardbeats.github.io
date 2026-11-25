@@ -149,3 +149,85 @@ footer a { color: var(--amber); }
     .consent-btn:hover{background:var(--amber2);}
     .consent-btn.ghost{background:transparent;border-color:var(--border);color:var(--text);}
     .consent-btn.ghost:hover{border-color:var(--amber);color:var(--amber);}
+
+/* ===== Tables ===== */
+.table-scroll{overflow-x:auto;}
+.bpm-hint output{font-weight:700;}
+
+/* ===== Metronome (moved from metronome/index.html + en mirror; rules identical) ===== */
+.metronome {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  margin: 28px 0 40px;
+  text-align: center;
+}
+.pulse {
+  width: 96px; height: 96px; margin: 0 auto 20px;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 34px; font-weight: 800; color: var(--muted);
+  transition: transform .06s ease, border-color .06s ease, color .06s ease, box-shadow .06s ease;
+}
+.pulse.hit { transform: scale(1.12); border-color: var(--amber); color: var(--amber); box-shadow: 0 0 32px rgba(245, 166, 35, .45); }
+.pulse.hit.accent { background: rgba(245, 166, 35, .15); }
+.beats { display: flex; gap: 2px; justify-content: center; margin-bottom: 22px; }
+.dot {
+  min-width: 44px; min-height: 44px;
+  background: transparent; border: 0; padding: 0;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-family: inherit;
+}
+.dot::before {
+  content: ""; display: block;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--bg2); border: 1px solid var(--border);
+}
+.dot.on::before { background: var(--amber); border-color: var(--amber); }
+.dot.on.accent::before { box-shadow: 0 0 12px rgba(245, 166, 35, .8); }
+.dot.muted::before { opacity: .25; }
+.bpm-big { font-size: 64px; font-weight: 800; color: var(--amber); line-height: 1; }
+.bpm-big small { font-size: 18px; color: var(--muted); font-weight: 600; }
+.controls { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+.controls input[type="range"] { width: 100%; accent-color: var(--amber); }
+.controls .row2 { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; align-items: center; }
+.controls label { font-size: 14px; color: var(--muted); font-weight: 600; }
+.controls select, .controls input[type="number"] {
+  background: var(--bg2); color: var(--text);
+  border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px;
+  font-size: 15px; font-family: inherit;
+}
+.btn-big {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--amber); color: var(--onaccent);
+  font-weight: 800; font-size: 18px; padding: 15px 54px; border-radius: 999px;
+  border: 0; cursor: pointer; font-family: inherit;
+  box-shadow: 0 8px 24px rgba(245, 166, 35, .25);
+}
+.btn-big:hover { background: var(--amber2); }
+.btn-big.stop { background: transparent; border: 1px solid var(--border); color: var(--text); box-shadow: none; }
+.check { display: flex; gap: 8px; align-items: center; justify-content: center; font-size: 14px; color: var(--muted); }
+.check input { accent-color: var(--amber); width: 18px; height: 18px; }
+.marking { color: var(--muted); font-size: 15px; font-weight: 600; margin-top: 4px; min-height: 22px; }
+.bpm-step { display: flex; gap: 10px; align-items: center; justify-content: center; }
+.step-btn {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--bg2); border: 1px solid var(--border);
+  color: var(--text); font-size: 20px; font-weight: 800; cursor: pointer;
+  font-family: inherit;
+}
+.step-btn:hover { border-color: var(--amber); color: var(--amber); }
+.tap-btn {
+  background: transparent; border: 1px dashed var(--border); color: var(--muted);
+  font-weight: 700; font-size: 14px; padding: 11px 26px; border-radius: 999px;
+  cursor: pointer; font-family: inherit;
+}
+.tap-btn:hover { border-color: var(--amber); color: var(--amber); }
+.tap-btn.tapped { border-style: solid; border-color: var(--amber); color: var(--amber); }
+.dots-hint { font-size: 12px; color: var(--muted); margin-top: 2px; }
+select.sound { min-width: 130px; }
+.vol-row { display: flex; gap: 10px; align-items: center; justify-content: center; }
+.vol-row input[type="range"] { width: 160px; accent-color: var(--amber); }
+@media (prefers-reduced-motion: reduce){.pulse{transition:none;}}

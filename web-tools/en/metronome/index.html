@@ -55,78 +55,6 @@
 <link rel="icon" type="image/png" sizes="64x64" href="../../../favicon-64.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png" />
 <link rel="stylesheet" href="../../styles.css" />
-<style>
-.metronome {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  margin: 28px 0 40px;
-  text-align: center;
-}
-.pulse {
-  width: 96px; height: 96px; margin: 0 auto 20px;
-  border-radius: 50%;
-  border: 3px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 34px; font-weight: 800; color: var(--muted);
-  transition: transform .06s ease, border-color .06s ease, color .06s ease, box-shadow .06s ease;
-}
-.pulse.hit { transform: scale(1.12); border-color: var(--amber); color: var(--amber); box-shadow: 0 0 32px rgba(245, 166, 35, .45); }
-.pulse.hit.accent { background: rgba(245, 166, 35, .15); }
-.beats { display: flex; gap: 10px; justify-content: center; margin-bottom: 22px; }
-.beats span {
-  width: 16px; height: 16px; border-radius: 50%;
-  background: var(--bg2); border: 1px solid var(--border);
-}
-.beats span.on { background: var(--amber); border-color: var(--amber); }
-.beats span.on.accent { box-shadow: 0 0 12px rgba(245, 166, 35, .8); }
-.bpm-big { font-size: 64px; font-weight: 800; color: var(--amber); line-height: 1; }
-.bpm-big small { font-size: 18px; color: var(--muted); font-weight: 600; }
-.controls { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
-.controls input[type="range"] { width: 100%; accent-color: var(--amber); }
-.controls .row2 { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; align-items: center; }
-.controls label { font-size: 14px; color: var(--muted); font-weight: 600; }
-.controls select, .controls input[type="number"] {
-  background: var(--bg2); color: var(--text);
-  border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px;
-  font-size: 15px; font-family: inherit;
-}
-.btn-big {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  background: var(--amber); color: var(--onaccent);
-  font-weight: 800; font-size: 18px; padding: 15px 54px; border-radius: 999px;
-  border: 0; cursor: pointer; font-family: inherit;
-  box-shadow: 0 8px 24px rgba(245, 166, 35, .25);
-}
-.btn-big:hover { background: var(--amber2); }
-.btn-big.stop { background: transparent; border: 1px solid var(--border); color: var(--text); box-shadow: none; }
-.check { display: flex; gap: 8px; align-items: center; justify-content: center; font-size: 14px; color: var(--muted); }
-.check input { accent-color: var(--amber); width: 18px; height: 18px; }
-.marking { color: var(--muted); font-size: 15px; font-weight: 600; margin-top: 4px; min-height: 22px; }
-.bpm-step { display: flex; gap: 10px; align-items: center; justify-content: center; }
-.step-btn {
-  width: 44px; height: 44px; border-radius: 50%;
-  background: var(--bg2); border: 1px solid var(--border);
-  color: var(--text); font-size: 20px; font-weight: 800; cursor: pointer;
-  font-family: inherit;
-}
-.step-btn:hover { border-color: var(--amber); color: var(--amber); }
-.tap-btn {
-  background: transparent; border: 1px dashed var(--border); color: var(--muted);
-  font-weight: 700; font-size: 14px; padding: 11px 26px; border-radius: 999px;
-  cursor: pointer; font-family: inherit;
-}
-.tap-btn:hover { border-color: var(--amber); color: var(--amber); }
-.tap-btn.tapped { border-style: solid; border-color: var(--amber); color: var(--amber); }
-.dots-hint { font-size: 12px; color: var(--muted); margin-top: 2px; }
-.beats span { cursor: pointer; }
-.beats span.muted { opacity: .25; }
-select.sound { min-width: 130px; }
-.vol-row { display: flex; gap: 10px; align-items: center; justify-content: center; }
-.vol-row input[type="range"] { width: 160px; accent-color: var(--amber); }
-</style>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -169,6 +97,7 @@ select.sound { min-width: 130px; }
 </script>
 </head>
 <body>
+<a class="skip" href="#main-content">Skip to content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMVJZ8VL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
@@ -184,7 +113,7 @@ select.sound { min-width: 130px; }
   </div>
 </nav>
 
-<main class="container">
+<main class="container" id="main-content">
   <section class="hero">
     <div class="eyebrow">ShardBeats · Web tools</div>
     <h1>Online <span class="accent">metronome</span></h1>
@@ -373,20 +302,39 @@ select.sound { min-width: 130px; }
     }
   }
 
+  function dotLabel(i) { return 'Beat ' + (i + 1); }
+  function dotClass(i, currentStep) {
+    var cls = 'dot';
+    if (i === currentStep && currentStep >= 0) cls = ' on';
+    if ((beatState[i] === 'accent' || (accentChk.checked && i === 0 && !beatState[i]))) cls += ' accent';
+    if (beatState[i] === 'mute') cls += ' muted';
+    return cls;
+  }
+  function dotPressed(i) { return beatState[i] === 'accent' ? 'true' : 'false'; }
+  function buildDots(currentStep) {
+    var beats = +beatsSel.value;
+    var html = '';
+    for (var i = 0; i < beats; i++) {
+      html += '<button type="button" class="' + dotClass(i, currentStep) + '" data-beat="' + i + '" aria-pressed="' + dotPressed(i) + '" aria-label="' + dotLabel(i) + '"></button>';
+    }
+    beatsBox.innerHTML = html;
+  }
+  function paintDots(currentStep) {
+    var dots = beatsBox.querySelectorAll('[data-beat]');
+    for (var k = 0; k < dots.length; k++) {
+      var i = +dots[k].getAttribute('data-beat');
+      dots[k].className = dotClass(i, currentStep);
+      dots[k].setAttribute('aria-pressed', dotPressed(i));
+    }
+  }
+
   function draw(currentStep) {
     var sub = +subdivSel.value, beats = +beatsSel.value;
     var beatIdx = Math.floor(currentStep / sub);
     pulse.textContent = currentStep < 0 ? '–' : beatIdx + 1;
     pulse.classList.remove('hit', 'accent');
-    var html = '';
-    for (var i = 0; i < beats; i++) {
-      var cls = '';
-      if (i === currentStep && currentStep >= 0) cls = 'on';
-      if ((beatState[i] === 'accent' || (accentChk.checked && i === 0 && !beatState[i]))) cls += ' accent';
-      if (beatState[i] === 'mute') cls += ' muted';
-      html += '<span class="' + cls + '" data-beat="' + i + '"></span>';
-    }
-    beatsBox.innerHTML = html;
+    if (beatsBox.querySelectorAll('[data-beat]').length !== beats) buildDots(currentStep);
+    else paintDots(currentStep);
     if (currentStep >= 0) {
       void pulse.offsetWidth;
       pulse.classList.add('hit');

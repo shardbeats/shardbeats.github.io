@@ -185,6 +185,7 @@
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
+<a class="skip" href="#main-content">Skip to content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMVJZ8VL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
@@ -199,7 +200,7 @@
   </nav>
   </header>
 
-  <main id="main">
+  <main id="main-content">
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
@@ -214,10 +215,11 @@
             </ul>
           </div>
           <div class="hero-form" id="download">
-            <h3>Get your free pack</h3>
+            <h2>Get your free pack</h2>
             <p>No card. Just your email.</p>
             <form action="https://hotmail.us12.list-manage.com/subscribe/post?u=12fdd35af3ef02ae3965c4142&amp;id=6f64dc4fab&amp;f_id=00e189e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-              <input type="email" name="EMAIL" id="mce-EMAIL" aria-label="Your email address" placeholder="you@email.com" required value="" />
+              <label for="mce-EMAIL">Your email</label>
+              <input type="email" name="EMAIL" id="mce-EMAIL" aria-label="Your email address" placeholder="you@email.com" aria-describedby="form-status" required value="" />
               <input type="text" name="FNAME" id="mce-FNAME" aria-label="Your name" placeholder="Your name (optional)" value="" class="fname-input" />
               <label class="consent-check">
                 <input type="checkbox" name="CONSENT" id="mce-CONSENT" value="yes" required />
@@ -227,7 +229,8 @@
               <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="b_12fdd35af3ef02ae3965c4142_6f64dc4fab" tabindex="-1" value="" /></div>
               <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn">Download free pack</button>
             </form>
-            <div id="dl-now" style="display:none;margin-top:14px;"><a class="btn btn-yellow" href="https://drive.google.com/drive/folders/1JXlk1swf-pW6axQeMRgxDfp-Hmjn-O2e?usp=sharing" target="_blank" rel="noopener">Download now (WAV + stems)</a></div>
+            <p id="form-status" role="status" tabindex="-1"></p>
+            <div id="dl-now" style="display:none;margin-top:14px;"><a class="btn btn-purple" href="https://drive.google.com/drive/folders/1JXlk1swf-pW6axQeMRgxDfp-Hmjn-O2e?usp=sharing" target="_blank" rel="noopener">Download now (WAV + stems)</a></div>
             <p class="micro">No spam. Unsubscribe anytime.</p>
           </div>
         </div>
@@ -359,7 +362,7 @@
       <div class="container" style="text-align:center;">
         <h2 style="color:#fff;">Ready to start?</h2>
         <p style="color:rgba(255,255,255,.85);margin:12px 0 24px;">Join the producers who already downloaded. No card needed.</p>
-        <a href="#download" class="btn btn-yellow">I want my free pack</a>
+        <a href="#download" class="btn btn-amber">I want my free pack</a>
       </div>
     </section>
   </main>
@@ -437,15 +440,21 @@
       var form = document.getElementById('mc-embedded-subscribe-form');
       if(!form) return;
       form.addEventListener('submit', function(e){
-        var email = document.getElementById('mce-EMAIL').value.trim();
+        var emailInput = document.getElementById('mce-EMAIL');
+        var status = document.getElementById('form-status');
+        var email = emailInput.value.trim();
         var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if(!re.test(email)){ e.preventDefault(); alert('Please enter a valid email.'); return; }
+        if(!re.test(email)){ e.preventDefault(); status.textContent='Please enter a valid email.'; emailInput.setAttribute('aria-invalid','true'); status.focus(); return; }
         var consent = document.getElementById('mce-CONSENT');
         if (consent && !consent.checked) {
           e.preventDefault();
-          alert('Please check the box to receive the pack and accept the privacy policy.');
+          status.textContent='Please check the box to receive the pack and accept the privacy policy.';
+          status.focus();
           return;
         }
+        emailInput.removeAttribute('aria-invalid');
+        status.textContent='Check your inbox.';
+        document.getElementById('form-status').focus();
         gtag('event', 'generate_lead', { form: 'pack_gratis', language: 'en' });
         setTimeout(function(){ var d=document.getElementById('dl-now'); if(d) d.style.display='block'; }, 800);
       });
@@ -457,7 +466,7 @@
       });
 
       if (new URLSearchParams(location.search).get('subscribed') === '1') {
-        var m = document.getElementById('main'); if(m) m.classList.add('hide');
+        var m = document.getElementById('main-content'); if(m) m.classList.add('hide');
         var t = document.getElementById('thankyou'); if(t) t.classList.add('show');
       }
     })();
