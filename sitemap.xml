@@ -90,4 +90,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://shardbeats.github.io/tutoriales/sp-404-mk2-preparar-samples/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shardbeats.github.io/tutoriales/en/sp-404-mk2-preparar-samples/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
