@@ -305,7 +305,7 @@
   function dotLabel(i) { return 'Beat ' + (i + 1); }
   function dotClass(i, currentStep) {
     var cls = 'dot';
-    if (i === currentStep && currentStep >= 0) cls = ' on';
+    if (i === currentStep && currentStep >= 0) cls += ' on';
     if ((beatState[i] === 'accent' || (accentChk.checked && i === 0 && !beatState[i]))) cls += ' accent';
     if (beatState[i] === 'mute') cls += ' muted';
     return cls;
