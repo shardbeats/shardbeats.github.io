@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="p:domain_verify" content="b057c8e43a06a802d24c1c27cfb07d3d"/>
+<meta name="google-site-verification" content="VdLDbokxShSCLe5d8as7TuPpIL4R1LN5wWVfc7z7G2c"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Boombap FL Studio workflow | ShardBeats</title>
+<meta name="description" content="Boombap FL Studio workflow in 5 steps: 23-track template, break-to-organ order, era combos, tape commit and DRY plus WET bounce." />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta name="theme-color" content="#151617" />
+<link rel="canonical" href="https://shardbeats.github.io/tutoriales/en/workflow-fl-studio-vintage-boombap/" />
+<link rel="alternate" hreflang="es" href="https://shardbeats.github.io/tutoriales/workflow-fl-studio-vintage-boombap/" />
+<link rel="alternate" hreflang="en" href="https://shardbeats.github.io/tutoriales/en/workflow-fl-studio-vintage-boombap/" />
+<link rel="alternate" hreflang="x-default" href="https://shardbeats.github.io/tutoriales/workflow-fl-studio-vintage-boombap/" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="ShardBeats" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:url" content="https://shardbeats.github.io/tutoriales/en/workflow-fl-studio-vintage-boombap/" />
+<meta property="og:title" content="Boombap FL Studio workflow | ShardBeats" />
+<meta property="og:description" content="23-track template, fixed break-to-organ order, era combos and tape commit. Free step-by-step guide." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Boombap FL Studio workflow | ShardBeats" />
+<meta name="twitter:description" content="23-track template, fixed order, era combos and tape commit before chopping." />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?'&l='+l:'';j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-NMVJZ8VL");</script>
+<!-- End Google Tag Manager -->
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'url_passthrough', true);
+    gtag('set', 'ads_data_redaction', true);
+    try {
+      if (localStorage.getItem('sb-consent') === 'granted') {
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          analytics_storage: 'granted'
+        });
+      }
+    } catch (e) {}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Boombap FL Studio workflow in 5 steps",
+    "description": "How to build a boombap FL Studio workflow: 23-track template, break-to-organ work order, era combos, tape commit to audio and DRY plus WET bounce.",
+    "inLanguage": "en",
+    "totalTime": "PT30M",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Build the 23-track template before composing", "text": "Tracks 1-10 for melodies with instrument, tape, Pultec and send reverb chain; 11-20 for drums with kick, snare, hat and break bus; 21 bass, 22 mix bus with subtle glue and 23 PRINT with Edison. Swing 55-60% and drum Stereo Sep 30-40%." },
+      { "@type": "HowToStep", "position": 2, "name": "Always work in the same order, from break to organ", "text": "Drum break at 83-95 BPM, then bass with root plus walk-up, piano or Rhodes following the kick, guitar as seasoning, strings, brass hits and bells as sprinkles, and organ pad last." },
+      { "@type": "HowToStep", "position": 3, "name": "Pick one combo per era and stay at 5 to 10 instruments", "text": "Gospel with 5 tracks at 83-88 BPM, 70s Soul with full band at 85-95 BPM, or Jazzy with 7 tracks, Wurli, upright walking bass and ride up front. Never 20 tracks." },
+      { "@type": "HowToStep", "position": 4, "name": "Commit to audio with tape before chopping", "text": "Print the melody with tape into the PRINT track Edison, then Slicex, chop and Resample mode for MPC60-style pitching. Optional second pass through SP-404 Vinyl for lofi grit." },
+      { "@type": "HowToStep", "position": 5, "name": "Bounce DRY and WET with full naming and check in mono", "text": "Bounce DRY with no sends and WET with sends using BPM_Key_Instrumento_Efecto_DRY-WET naming. Check in mono and meter with Metering aiming for -1dB peaks." }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "mainEntity": [
+      { "@type": "Question", "name": "Where do I start a beat?", "acceptedAnswer": { "@type": "Answer", "text": "With the drum break at 83-95 BPM; everything else follows its rhythm." } },
+      { "@type": "Question", "name": "When do I commit to audio?", "acceptedAnswer": { "@type": "Answer", "text": "After the arrangement is done: tape commit via Edison PRINT before chopping." } },
+      { "@type": "Question", "name": "How many tracks?", "acceptedAnswer": { "@type": "Answer", "text": "5-10 right instruments per the combo; layer in drums+bass > keys > guitar > strings/brass > bells > organ order." } }
+    ]
+  }
+  </script>
+<link rel="icon" type="image/png" sizes="64x64" href="../../../favicon-64.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png" />
+<link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMVJZ8VL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav aria-label="Main">
+  <div class="container">
+    <a class="logo" href="../../../en/" style="text-decoration:none">Shard <span>Beats</span></a>
+    <div class="nav-links">
+      <a href="../../../tools/en/">TRAKK SUITE</a>
+      <a href="../../../landing/en/">Free pack</a>
+      <a href="../">Tutorials</a>
+      <a href="../../workflow-fl-studio-vintage-boombap/" hreflang="es" lang="es">ES</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <p class="crumb" style="margin-top:18px;font-size:14px;"><a href="../">← Tutorials</a></p>
+  <section class="hero" style="padding-top:24px;">
+    <div class="eyebrow">ShardBeats · Tutorials · Vintage workflow</div>
+    <h1>Boombap FL Studio workflow in 5 steps</h1>
+    <p class="lead">Boombap FL Studio workflow that sounds like a record from the first session: from template to final bounce in 5 steps, with no wasted hours.</p>
+  </section>
+
+  <div class="prose">
+    <p>This <strong>boombap FL Studio workflow</strong> is for producers who open an empty project and lose an hour on every beat: they build the mixer from scratch, record and never know when the loop is ready. With a pre-wired 23-track template, a fixed work order that starts at the drum break, era combos that cap the track count and a tape commit to audio before chopping, every beat comes out with the same sound in less time. The final bounce goes out DRY and WET with BPM_Key naming.</p>
+
+    <h2>Step 1: build the 23-track template before composing</h2>
+    <p>Build the mixer template once and save it as your starting point: tracks 1 through 10 for melodies with an instrument, tape, Pultec and send reverb chain; tracks 11 through 20 for drums with kick, snare, hat and a bus for the break; 21 for bass, 22 as mix bus with subtle glue and 23 as PRINT with Edison ready to record. Set swing between 55 and 60% and drum Stereo Sep between 30 and 40%. With the template loaded, every beat starts at minute one.</p>
+
+    <h2>Step 2: always work in the same order, from break to organ</h2>
+    <p>Always work in this order: first the drum break between 83 and 95 BPM, with MODO or Empire if you build drums from scratch; then bass with root plus walk-up; then piano or Rhodes following the kick; guitar as seasoning; strings, brass hits and bells as sprinkles; and the organ pad last to glue everything. Every layer lands on an already solid rhythmic base and you know what is missing when something sounds empty.</p>
+
+    <h2>Step 3: pick one combo per era and stay at 5 to 10 instruments</h2>
+    <p>Pick one combo per era before adding tracks: Gospel with 5 tracks between 83 and 88 BPM, piano following the kick and organ on long notes; 70s Soul with a full band between 85 and 95 BPM; or Jazzy with 7 tracks, Wurli, upright walking bass and ride up front. The right count is 5 to 10 instruments, never 20 tracks: if piano, Rhodes and Wurli fight over the same range, one of them has to go.</p>
+
+    <h2>Step 4: commit to audio with tape before chopping</h2>
+    <p>Commit to audio once the arrangement is locked: print the melody with tape into the PRINT track Edison and work from that audio, not from the MIDI. Then open Slicex, chop and enable Resample mode for MPC60-style pitching, where pitch and tempo move together. For lofi grit, an optional second pass through the SP-404 Vinyl destroys the edges. Deciding the sound before chopping is what finishes beats.</p>
+
+    <h2>Step 5: bounce DRY and WET with full naming and check in mono</h2>
+    <p>Always bounce two versions: DRY with no sends and WET with sends, using BPM_Key_Instrumento_Efecto_DRY-WET naming, for example 90_Cm_Rhodes_388_DRY. DRY lets you filter and re-effect; WET documents the sound of your idea. Before bouncing, check in mono with the Stereo Sep knob and meter with Metering aiming for -1dB peaks. A loop that collapses in mono collapses on the phone of whoever buys it.</p>
+
+    <h2>Keep going with free TRAKK SUITE</h2>
+    <p>Get your bounces ready with the <a href="../../../tools/en/">free TRAKK SUITE tools</a>: BPM_Key naming and WAV conversion for any sampler or hardware.</p>
+
+    <h2>FAQ</h2>
+    <div class="faq">
+      <details><summary>Where do I start a beat?</summary><p>With the drum break at 83-95 BPM; everything else follows its rhythm.</p></details>
+      <details><summary>When do I commit to audio?</summary><p>After the arrangement is done: tape commit via Edison PRINT before chopping.</p></details>
+      <details><summary>How many tracks?</summary><p>5-10 right instruments per the combo; layer in drums+bass > keys > guitar > strings/brass > bells > organ order.</p></details>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>Shard Btmkr (Dario Garcia) · ShardBeats channel & site · La Piedad, Mich. · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">Site content: CC BY-NC-SA 4.0</a></p>
+    <p><a href="../../../tools/en/">TRAKK SUITE</a> · <a href="../../../landing/en/">Free pack</a> · <a href="../">Tutorials</a></p>
+  </div>
+</footer>
+
+  <div id="consent-banner" class="consent" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+    <p><strong>Cookies and analytics.</strong> We use Google Analytics to measure visits and tool usage. You can accept or decline; declining stores no measurement cookies. <a href="../../../tools/privacy.html">Privacy policy</a>.</p>
+    <div class="consent-actions">
+      <button class="consent-btn ghost" type="button" data-consent="denied">Decline</button>
+      <button class="consent-btn" type="button" data-consent="granted">Accept</button>
+    </div>
+  </div>
+  <script>
+    (function(){
+      var banner = document.getElementById('consent-banner');
+      if (!banner) return;
+      var stored = null;
+      try { stored = localStorage.getItem('sb-consent'); } catch (e) {}
+      if (!stored) banner.hidden = false;
+      function apply(state) {
+        try { localStorage.setItem('sb-consent', state); } catch (e) {}
+        gtag('consent', 'update', {
+          ad_storage: state,
+          ad_user_data: state,
+          ad_personalization: state,
+          analytics_storage: state
+        });
+        banner.hidden = true;
+      }
+      banner.addEventListener('click', function(e){
+        var btn = e.target.closest('[data-consent]');
+        if (btn) apply(btn.getAttribute('data-consent'));
+      });
+      document.querySelectorAll('[data-consent-reset]').forEach(function(el){
+        el.addEventListener('click', function(e){
+          e.preventDefault();
+          banner.hidden = false;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
