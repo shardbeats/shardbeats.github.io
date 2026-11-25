@@ -99,6 +99,7 @@ tr:hover td { background: rgba(245, 166, 35, .04); }
 .tool-card h2 { margin: 0; font-size: 22px; }
 .tool-card p { color: var(--muted); font-size: 14px; flex: 1; }
 .tool-card .cta-row { display: flex; gap: 10px; margin-top: 8px; }
+.tool-card[hidden] { display: none; }
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--amber); color: var(--onaccent);

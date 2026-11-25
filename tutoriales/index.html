@@ -55,10 +55,15 @@
 <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
 <link rel="stylesheet" href="styles.css" />
 <style>
-.filter-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;margin:4px 0 0;}
-.filter-btn{font:inherit;font-size:13px;font-weight:700;padding:7px 16px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;}
+.tut-layout{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:24px;align-items:start;margin:28px 0 48px;}
+.tut-layout .tool-grid{margin:0;}
+.filter-side{position:sticky;top:16px;min-width:0;}
+.filter-title{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 8px;}
+.filter-row{display:flex;flex-direction:column;align-items:stretch;gap:8px;margin:0;}
+.filter-btn{font:inherit;font-size:13px;font-weight:700;padding:7px 16px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;text-align:left;}
 .filter-btn:hover{border-color:var(--amber);color:var(--amber);}
 .filter-btn[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:var(--onaccent);}
+@media (max-width:900px){.tut-layout{grid-template-columns:1fr;}.filter-side{position:static;}.filter-row{flex-direction:row;flex-wrap:wrap;}}
 </style>
 </head>
 <body>
@@ -84,7 +89,10 @@
     <p class="lead">Guías paso a paso de FL Studio, mezcla y SP-404.</p>
   </section>
 
-  <div class="filter-row" role="group" aria-label="Filtrar tutoriales por etiqueta">
+  <div class="tut-layout">
+    <aside class="filter-side" aria-label="Filtrar por etiqueta">
+      <p class="filter-title">Filtrar por etiqueta</p>
+      <div class="filter-row" role="group" aria-label="Filtrar tutoriales por etiqueta">
     <button class="filter-btn" type="button" data-filter="todo" aria-pressed="true">Todo</button>
     <button class="filter-btn" type="button" data-filter="receta" aria-pressed="false">Receta</button>
     <button class="filter-btn" type="button" data-filter="video" aria-pressed="false">Video</button>
@@ -96,8 +104,8 @@
     <button class="filter-btn" type="button" data-filter="vender" aria-pressed="false">Vender</button>
     <button class="filter-btn" type="button" data-filter="efectos" aria-pressed="false">Efectos</button>
   </div>
-
-  <div class="tool-grid">
+    </aside>
+    <div class="tool-grid">
     <div class="tool-card" data-tags="video workflow">
       <span class="tag">Disponible</span>
       <span class="tag">Video</span>
@@ -195,6 +203,7 @@
       <h2>Efectos clave sin comprar nada</h2>
       <p>Reverb, delay, saturación y automatización solo con plugins de fábrica para dar carácter a tus beats.</p>
       <div class="cta-row"><a class="btn" href="efectos-clave-sin-comprar-nada/">Leer tutorial</a></div>
+    </div>
     </div>
   </div>
 </main>
