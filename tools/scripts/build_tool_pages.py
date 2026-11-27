@@ -468,6 +468,7 @@ TOOLS = [
         "version": "1.4.0",
         "repo": "https://github.com/shardbeats/TRAKKART",
         "category": "MultimediaApplication",
+        "hero_video": True,
         "video": {
             "id": "M5Y8g9p1FgQ",
             "title": "Crea PORTADAS ANIMADAS para tus beats",
@@ -734,10 +735,7 @@ $subnav
         <a class="repo-link" href="$repo" target="_blank" rel="noopener">$repo_label</a>
 $android_link
       </div>
-      <figure class="shot">
-        <img src="$shot" alt="$shot_alt" width="$shot_w" height="$shot_h" loading="lazy" />
-        <figcaption>$name v$version</figcaption>
-      </figure>
+$hero_media
     </div>
   </section>
 
@@ -1103,13 +1101,16 @@ def build(tool, lang):
 
     video_section = ''
     video_script = ''
+    hero_media = '\n'.join([
+        '      <figure class="shot">',
+        '        <img src="$shot" alt="$shot_alt" width="$shot_w" height="$shot_h" loading="lazy" />',
+        '        <figcaption>$name v$version</figcaption>',
+        '      </figure>',
+    ])
     if tool.get('video'):
         vid = tool['video']
         label = ui['video_play'] + ' ' + vid['title']
-        video_section = '\n'.join([
-            '  <section class="section" id="video">',
-            '    <div class="container prose">',
-            '      <h2>' + esc(ui['video_heading']) + '</h2>',
+        embed = '\n'.join([
             '      <div class="video-embed" data-video-id="' + vid['id'] + '">',
             '        <button type="button" class="video-facade" aria-label="' + esc(label) + '">',
             '          <img src="' + root_rel + 'assets/video-' + tool['slug'] + '.jpg"'
@@ -1120,9 +1121,18 @@ def build(tool, lang):
             '      <p class="video-caption">' + esc(vid['title'])
             + ' · <a href="https://www.youtube.com/watch?v=' + vid['id']
             + '" target="_blank" rel="noopener">' + esc(ui['video_watch']) + '</a></p>',
-            '    </div>',
-            '  </section>',
         ])
+        if tool.get('hero_video'):
+            hero_media = embed
+        else:
+            video_section = '\n'.join([
+                '  <section class="section" id="video">',
+                '    <div class="container prose">',
+                '      <h2>' + esc(ui['video_heading']) + '</h2>',
+                embed,
+                '    </div>',
+                '  </section>',
+            ])
         video_script = VIDEO_SCRIPT
 
     import json
@@ -1170,6 +1180,7 @@ def build(tool, lang):
         bg_script=BG_SCRIPT,
         video_section=video_section,
         video_script=video_script,
+        hero_media=hero_media,
         lang_switch_full='English' if lang == 'es' else 'Español',
         navlabel='Principal' if lang == 'es' else 'Main',
         **{k: v for k, v in ui.items() if k not in ('screenshot_alt', 'download', 'repo')},
