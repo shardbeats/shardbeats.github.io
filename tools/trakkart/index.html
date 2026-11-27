@@ -122,6 +122,22 @@
           "item": "https://shardbeats.github.io/tools/trakkart/"
         }
       ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Crea PORTADAS ANIMADAS para tus beats",
+      "description": "Cómo crear portadas animadas para tus beats con TRAKKART: dithering, animación y paquete de exportación, todo offline.",
+      "thumbnailUrl": "https://shardbeats.github.io/tools/assets/video-trakkart.jpg",
+      "uploadDate": "2026-11-26T18:50:10-08:00",
+      "duration": "PT1M54S",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/M5Y8g9p1FgQ",
+      "contentUrl": "https://www.youtube.com/watch?v=M5Y8g9p1FgQ",
+      "inLanguage": "es",
+      "publisher": {
+        "@type": "Organization",
+        "name": "ShardBeats",
+        "url": "https://shardbeats.github.io/tools/"
+      }
     }
   ]
 }
@@ -206,7 +222,18 @@
     </div>
   </section>
 
-
+  <section class="section" id="video">
+    <div class="container prose">
+      <h2>Míralo funcionando</h2>
+      <div class="video-embed" data-video-id="M5Y8g9p1FgQ">
+        <button type="button" class="video-facade" aria-label="Reproducir vídeo: Crea PORTADAS ANIMADAS para tus beats">
+          <img src="../assets/video-trakkart.jpg" alt="" width="1280" height="720" loading="lazy" />
+          <span class="video-badge" aria-hidden="true"></span>
+        </button>
+      </div>
+      <p class="video-caption">Crea PORTADAS ANIMADAS para tus beats · <a href="https://www.youtube.com/watch?v=M5Y8g9p1FgQ" target="_blank" rel="noopener">Verlo en YouTube</a></p>
+    </div>
+  </section>
 
   <section class="section alt">
     <div class="container prose">
@@ -319,7 +346,24 @@
       });
     })();
   </script>
-
+  <script>
+    (function(){
+      document.querySelectorAll('.video-facade').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var wrap = btn.closest('.video-embed');
+          var id = wrap && wrap.getAttribute('data-video-id');
+          if (!id) return;
+          var frame = document.createElement('iframe');
+          frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+          frame.title = btn.getAttribute('aria-label') || 'YouTube';
+          frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+          frame.allowFullscreen = true;
+          wrap.innerHTML = '';
+          wrap.appendChild(frame);
+        });
+      });
+    })();
+  </script>
   <script>
     (function(){
       var el = document.getElementById('bg3d');

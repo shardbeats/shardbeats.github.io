@@ -468,6 +468,13 @@ TOOLS = [
         "version": "1.4.0",
         "repo": "https://github.com/shardbeats/TRAKKART",
         "category": "MultimediaApplication",
+        "video": {
+            "id": "M5Y8g9p1FgQ",
+            "title": "Crea PORTADAS ANIMADAS para tus beats",
+            "upload": "2026-11-26T18:50:10-08:00",
+            "duration": "PT1M54S",
+            "desc": "Cómo crear portadas animadas para tus beats con TRAKKART: dithering, animación y paquete de exportación, todo offline.",
+        },
         "es": {
             "title": "Portadas con dithering y animación, offline | TRAKKART",
             "desc": "Estudio offline de portadas: convierte cualquier imagen en artwork con dithering para singles, pósters, merch y redes. 36 motores, canvas libre, exporta el paquete. Sin internet, sin cuentas.",
